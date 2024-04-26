@@ -1,0 +1,704 @@
+The server is running on http://localhost:8089
+连接成功
+req.params=spacepark001
+message=spacepark001[2,"f44e94ff-6587-688d-9bfe-6c4d99686ab6","BootNotification",{"chargePointVendor":"VENDOR","chargePointModel":"EU1060_TYPE_II","chargePointSerialNumber":"spacepark001","chargeBoxSerialNumber":"5D45CFF0362B41D7500100A3","firmwareVersion":"ACM4_EVSE_V12.38","meterType":"D1006BF"}]
+into BootNotification proc
+send_to_ev_charger_json:[3,"f44e94ff-6587-688d-9bfe-6c4d99686ab6",{"currentTime":"2023-12-25T21:20:18.639Z","interval":30,"status":"Accepted"}]
+message=spacepark001[2,"d64ca0f8-1f01-7c9f-f43d-1bd22c4cfeef","StatusNotification",{"connectorId":0,"errorCode":"NoError","status":"Available","timestamp":"2023-12-25T21:18:25.001Z"}]
+into "StatusNotification" proc
+status=Available
+send_to_ev_charger_json:[3,"d64ca0f8-1f01-7c9f-f43d-1bd22c4cfeef",{}]
+message=spacepark001[2,"f65b69b8-0ba2-d8c6-6473-700f642dd4f1","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-12-25T21:18:25.001Z"}]
+into "StatusNotification" proc
+status=Available
+send_to_ev_charger_json:[3,"f65b69b8-0ba2-d8c6-6473-700f642dd4f1",{}]
+message=spacepark001[2,"a8f92eb8-787b-da5c-504f-d3383d06ad34","StatusNotification",{"connectorId":2,"errorCode":"NoError","status":"Available","timestamp":"2023-12-25T21:18:25.001Z"}]
+into "StatusNotification" proc
+status=Available
+send_to_ev_charger_json:[3,"a8f92eb8-787b-da5c-504f-d3383d06ad34",{}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"36ea6ffc-530f-560e-fbfb-9a71da5253e5","StatusNotification",{"connectorId":0,"errorCode":"NoError","status":"Available","timestamp":"2023-12-25T21:20:18.001Z"}]
+into "StatusNotification" proc
+status=Available
+send_to_ev_charger_json:[3,"36ea6ffc-530f-560e-fbfb-9a71da5253e5",{}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"aea1321e-260c-216c-0e19-881f0c81324b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-12-25T21:20:18.001Z"}]
+into "StatusNotification" proc
+status=Available
+send_to_ev_charger_json:[3,"aea1321e-260c-216c-0e19-881f0c81324b",{}]
+message=spacepark001[2,"daa1eb27-196f-0523-6fc2-adf9dee4f0f6","StatusNotification",{"connectorId":2,"errorCode":"NoError","status":"Available","timestamp":"2023-12-25T21:20:18.001Z"}]
+into "StatusNotification" proc
+status=Available
+send_to_ev_charger_json:[3,"daa1eb27-196f-0523-6fc2-adf9dee4f0f6",{}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"bc37e69c-b82f-4267-1ede-6b9003fef1ca","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"bc37e69c-b82f-4267-1ede-6b9003fef1ca",{"currentTime":"2023-12-25T21:20:50.868Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f832a448-0275-dee4-51b6-43f0b5e72ebf","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f832a448-0275-dee4-51b6-43f0b5e72ebf",{"currentTime":"2023-12-25T21:21:21.999Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"269e049d-f331-0d55-1dc2-ffaae8b59372","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"269e049d-f331-0d55-1dc2-ffaae8b59372",{"currentTime":"2023-12-25T21:21:54.139Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"40f520fb-aff2-832a-00b9-bdc7b4fd4708","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"40f520fb-aff2-832a-00b9-bdc7b4fd4708",{"currentTime":"2023-12-25T21:22:25.276Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f667a204-05d1-171e-970e-5718155437a0","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f667a204-05d1-171e-970e-5718155437a0",{"currentTime":"2023-12-25T21:22:57.407Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"5763e160-6e86-51de-9669-a33f4dc1f73c","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"5763e160-6e86-51de-9669-a33f4dc1f73c",{"currentTime":"2023-12-25T21:23:29.547Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ce8ecea6-874f-e14c-d85d-0dabf68ffee1","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ce8ecea6-874f-e14c-d85d-0dabf68ffee1",{"currentTime":"2023-12-25T21:24:01.683Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"2130d95a-75ce-9245-af84-a2991efa02ee","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"2130d95a-75ce-9245-af84-a2991efa02ee",{"currentTime":"2023-12-25T21:24:32.816Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"c043b3db-9e43-6314-9f6f-10a444a8eb02","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"c043b3db-9e43-6314-9f6f-10a444a8eb02",{"currentTime":"2023-12-25T21:25:03.951Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"64712421-fa67-cfb2-6a1f-545555242d01","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"64712421-fa67-cfb2-6a1f-545555242d01",{"currentTime":"2023-12-25T21:25:36.086Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"e86c5c95-3d5f-ee9f-ae56-c340f1d8686c","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"e86c5c95-3d5f-ee9f-ae56-c340f1d8686c",{"currentTime":"2023-12-25T21:26:06.219Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"626e02d1-a347-47cc-9507-fdec8a8e443a","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"626e02d1-a347-47cc-9507-fdec8a8e443a",{"currentTime":"2023-12-25T21:26:37.351Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"a5ca63b2-c7dc-7981-ff2c-600853849ae4","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"a5ca63b2-c7dc-7981-ff2c-600853849ae4",{"currentTime":"2023-12-25T21:27:08.490Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"1036e3e6-5463-8011-4ff3-c23b00ed1c79","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"1036e3e6-5463-8011-4ff3-c23b00ed1c79",{"currentTime":"2023-12-25T21:27:40.651Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"2aa6b38c-2866-6678-4b19-6544fa3a9771","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"2aa6b38c-2866-6678-4b19-6544fa3a9771",{"currentTime":"2023-12-25T21:28:12.781Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"513edf8f-79c0-48cf-f279-4314045e1bb1","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"513edf8f-79c0-48cf-f279-4314045e1bb1",{"currentTime":"2023-12-25T21:28:43.915Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"362ec003-67cb-08cb-d826-bb82e02783b0","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"362ec003-67cb-08cb-d826-bb82e02783b0",{"currentTime":"2023-12-25T21:29:15.057Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"290bff51-e8ff-4cbb-d219-a20606d2a1e6","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"290bff51-e8ff-4cbb-d219-a20606d2a1e6",{"currentTime":"2023-12-25T21:29:46.189Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"7c41b3d6-d7a4-5f65-1c2c-303c7f34ce69","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"7c41b3d6-d7a4-5f65-1c2c-303c7f34ce69",{"currentTime":"2023-12-25T21:30:17.326Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"cb3ecd7d-df0e-0e74-5fd4-8e8157828086","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"cb3ecd7d-df0e-0e74-5fd4-8e8157828086",{"currentTime":"2023-12-25T21:30:49.460Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"401ebc4d-704b-b4c4-e4a0-603fb7a3dd26","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"401ebc4d-704b-b4c4-e4a0-603fb7a3dd26",{"currentTime":"2023-12-25T21:31:20.595Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"1734fd85-a1a6-b138-c13e-f249b6f34c54","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"1734fd85-a1a6-b138-c13e-f249b6f34c54",{"currentTime":"2023-12-25T21:31:51.730Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"a5b62da0-ede1-f1e7-7e27-230689b2c319","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"a5b62da0-ede1-f1e7-7e27-230689b2c319",{"currentTime":"2023-12-25T21:32:23.863Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"53fd8878-5b77-0d72-29a3-58425cfed30f","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"53fd8878-5b77-0d72-29a3-58425cfed30f",{"currentTime":"2023-12-25T21:32:55.009Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"3d810050-37fc-78b0-0a91-fdd8480f44e8","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"3d810050-37fc-78b0-0a91-fdd8480f44e8",{"currentTime":"2023-12-25T21:33:25.144Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"83c0d91a-bdf7-a01d-4caf-50ad8a3c7549","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"83c0d91a-bdf7-a01d-4caf-50ad8a3c7549",{"currentTime":"2023-12-25T21:33:57.302Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"e72522f3-9d6f-4d0b-64c0-75907d6cf40e","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"e72522f3-9d6f-4d0b-64c0-75907d6cf40e",{"currentTime":"2023-12-25T21:34:28.416Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"5f1c22b8-57e9-f5c5-2e9c-7e207b39af71","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"5f1c22b8-57e9-f5c5-2e9c-7e207b39af71",{"currentTime":"2023-12-25T21:34:59.548Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"8ee186a0-5762-353c-2886-a512fe8f9ae9","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"8ee186a0-5762-353c-2886-a512fe8f9ae9",{"currentTime":"2023-12-25T21:35:31.681Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"cf2fec18-4863-ed0d-b1b9-6749d171b03c","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"cf2fec18-4863-ed0d-b1b9-6749d171b03c",{"currentTime":"2023-12-25T21:36:02.821Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"862571f8-820d-da5b-a454-ba52fc21c03b","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"862571f8-820d-da5b-a454-ba52fc21c03b",{"currentTime":"2023-12-25T21:36:34.949Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"75344a15-7347-a3d5-4d62-4453aa42b92a","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"75344a15-7347-a3d5-4d62-4453aa42b92a",{"currentTime":"2023-12-25T21:37:07.088Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f04522ba-6be2-5659-b63f-9b6a28a5603e","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f04522ba-6be2-5659-b63f-9b6a28a5603e",{"currentTime":"2023-12-25T21:37:38.224Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"a8c9a2e5-7285-c087-bc67-a7a2cee9c4b6","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"a8c9a2e5-7285-c087-bc67-a7a2cee9c4b6",{"currentTime":"2023-12-25T21:38:09.374Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"09ef98ce-2631-5b19-fbdd-348e3858a686","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"09ef98ce-2631-5b19-fbdd-348e3858a686",{"currentTime":"2023-12-25T21:38:41.509Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"85e3eb3d-64fb-0342-1c9b-9d3b1f75cfab","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"85e3eb3d-64fb-0342-1c9b-9d3b1f75cfab",{"currentTime":"2023-12-25T21:39:13.650Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"bf86d05c-a522-409f-4803-301e1426179e","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"bf86d05c-a522-409f-4803-301e1426179e",{"currentTime":"2023-12-25T21:39:45.782Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"c5f653a4-46d8-7d20-7de2-3a5412887abd","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"c5f653a4-46d8-7d20-7de2-3a5412887abd",{"currentTime":"2023-12-25T21:40:17.918Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"85311248-216f-235c-4110-c5626331a35e","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"85311248-216f-235c-4110-c5626331a35e",{"currentTime":"2023-12-25T21:40:50.053Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"4ada6c19-6e00-959f-bcfb-ae3de13e02e6","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"4ada6c19-6e00-959f-bcfb-ae3de13e02e6",{"currentTime":"2023-12-25T21:41:20.186Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"2def1d26-c331-4775-4d9e-c71db8ffb89d","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"2def1d26-c331-4775-4d9e-c71db8ffb89d",{"currentTime":"2023-12-25T21:41:51.324Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"3b94199d-9ee6-b53a-d166-d4fa0f8db762","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"3b94199d-9ee6-b53a-d166-d4fa0f8db762",{"currentTime":"2023-12-25T21:42:22.459Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ac192926-cbb4-931c-8d82-c236fa884e58","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ac192926-cbb4-931c-8d82-c236fa884e58",{"currentTime":"2023-12-25T21:42:54.600Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"98b03f5e-a286-8c37-ec27-bf535150c047","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"98b03f5e-a286-8c37-ec27-bf535150c047",{"currentTime":"2023-12-25T21:43:25.739Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"16ee0524-6581-2dbf-6ad5-29fb0a4d80f7","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"16ee0524-6581-2dbf-6ad5-29fb0a4d80f7",{"currentTime":"2023-12-25T21:43:56.874Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f3e41902-b804-9b1c-1d72-a0100008eb33","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f3e41902-b804-9b1c-1d72-a0100008eb33",{"currentTime":"2023-12-25T21:44:29.010Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"e80e91d9-b4fb-d29e-d795-704be2426a64","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"e80e91d9-b4fb-d29e-d795-704be2426a64",{"currentTime":"2023-12-25T21:44:59.142Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"5fe6d877-77be-3e81-812c-3a0b57bb9323","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"5fe6d877-77be-3e81-812c-3a0b57bb9323",{"currentTime":"2023-12-25T21:45:30.274Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ae0271c8-ecc2-b890-68fb-23e1d278b3d5","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ae0271c8-ecc2-b890-68fb-23e1d278b3d5",{"currentTime":"2023-12-25T21:46:01.412Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"b6f0414a-782e-c215-1fce-357d99d85d8b","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"b6f0414a-782e-c215-1fce-357d99d85d8b",{"currentTime":"2023-12-25T21:46:33.546Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"0896f0c4-3f9c-150e-bc8b-3c604d00f2a5","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"0896f0c4-3f9c-150e-bc8b-3c604d00f2a5",{"currentTime":"2023-12-25T21:47:04.679Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ac6c052a-4b7a-9923-114c-9c8d5a45590f","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ac6c052a-4b7a-9923-114c-9c8d5a45590f",{"currentTime":"2023-12-25T21:47:35.816Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f4b8a38c-7856-3999-2805-b73d8b8f1161","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f4b8a38c-7856-3999-2805-b73d8b8f1161",{"currentTime":"2023-12-25T21:48:07.953Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"3a9a42c3-caa6-4e23-5fe3-36b1168de925","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"3a9a42c3-caa6-4e23-5fe3-36b1168de925",{"currentTime":"2023-12-25T21:48:40.105Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"83137c17-27f2-c2c1-a916-817508877d7b","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"83137c17-27f2-c2c1-a916-817508877d7b",{"currentTime":"2023-12-25T21:49:10.244Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"870505e1-ae13-c4e5-3217-363ce238cac4","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"870505e1-ae13-c4e5-3217-363ce238cac4",{"currentTime":"2023-12-25T21:49:41.381Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"22564c9b-5b7b-f805-ca44-7a9e3fa1cf36","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"22564c9b-5b7b-f805-ca44-7a9e3fa1cf36",{"currentTime":"2023-12-25T21:50:12.519Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"c12d4f60-848d-53a7-8a08-db9b809c90ae","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"c12d4f60-848d-53a7-8a08-db9b809c90ae",{"currentTime":"2023-12-25T21:50:44.654Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"e404533d-a3ed-77b5-2e6f-59aa86a1774a","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"e404533d-a3ed-77b5-2e6f-59aa86a1774a",{"currentTime":"2023-12-25T21:51:16.790Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f698b6a5-8c1e-d992-6cb2-99a193607fb5","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f698b6a5-8c1e-d992-6cb2-99a193607fb5",{"currentTime":"2023-12-25T21:51:47.931Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"b134dd50-2cac-bc24-27a9-4400dc88e985","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"b134dd50-2cac-bc24-27a9-4400dc88e985",{"currentTime":"2023-12-25T21:52:19.064Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"8ae73b8a-5500-8aa8-f08d-3ec36c5509d1","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"8ae73b8a-5500-8aa8-f08d-3ec36c5509d1",{"currentTime":"2023-12-25T21:52:50.200Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"a4daf528-969b-9234-2dc3-6a591866c609","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"a4daf528-969b-9234-2dc3-6a591866c609",{"currentTime":"2023-12-25T21:53:21.333Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"c4380119-f45b-a117-94af-e26ee9bfbb9e","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"c4380119-f45b-a117-94af-e26ee9bfbb9e",{"currentTime":"2023-12-25T21:53:53.469Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"04e2dae2-a1e0-71a2-18c0-b31ee3a96736","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"04e2dae2-a1e0-71a2-18c0-b31ee3a96736",{"currentTime":"2023-12-25T21:54:25.600Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"38a9fb90-6c60-45c1-decd-fe59c3bcec93","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"38a9fb90-6c60-45c1-decd-fe59c3bcec93",{"currentTime":"2023-12-25T21:54:56.740Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"d54a9a3b-0044-3582-d240-ff1c8ba81419","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"d54a9a3b-0044-3582-d240-ff1c8ba81419",{"currentTime":"2023-12-25T21:55:27.871Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"0a0bb7b9-ed92-af60-c158-5415da02b248","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"0a0bb7b9-ed92-af60-c158-5415da02b248",{"currentTime":"2023-12-25T21:56:00.005Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ed2f561f-2b84-0d97-fc4b-fd27e90f5ca0","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ed2f561f-2b84-0d97-fc4b-fd27e90f5ca0",{"currentTime":"2023-12-25T21:56:31.145Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"1a64d584-f4b6-5105-8f43-ad81d91cb215","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"1a64d584-f4b6-5105-8f43-ad81d91cb215",{"currentTime":"2023-12-25T21:57:02.280Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"7e306f22-c0a2-b27d-d959-f1f613f16f3f","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"7e306f22-c0a2-b27d-d959-f1f613f16f3f",{"currentTime":"2023-12-25T21:57:34.416Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f27b3d44-7d63-1933-608b-8feb40644797","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f27b3d44-7d63-1933-608b-8feb40644797",{"currentTime":"2023-12-25T21:58:06.556Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ab111329-8713-e7f3-871d-ed4a5aa087bb","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ab111329-8713-e7f3-871d-ed4a5aa087bb",{"currentTime":"2023-12-25T21:58:37.693Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"4fd8831b-d2f4-7738-937b-d9465750b2ac","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"4fd8831b-d2f4-7738-937b-d9465750b2ac",{"currentTime":"2023-12-25T21:59:08.836Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"b07adf40-e815-0f2c-da35-27d6cf0ef9d3","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"b07adf40-e815-0f2c-da35-27d6cf0ef9d3",{"currentTime":"2023-12-25T21:59:40.973Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"0c634a23-081b-d730-0fd1-36df5a234bf9","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"0c634a23-081b-d730-0fd1-36df5a234bf9",{"currentTime":"2023-12-25T22:00:13.112Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"a28472a1-6625-2633-a5e0-fbdb2f71b114","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"a28472a1-6625-2633-a5e0-fbdb2f71b114",{"currentTime":"2023-12-25T22:00:43.251Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"cb034f64-8348-fa45-1ce9-74d7b35a6510","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"cb034f64-8348-fa45-1ce9-74d7b35a6510",{"currentTime":"2023-12-25T22:01:14.387Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"d44a71fa-40e8-f795-7232-d504cfa201fb","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"d44a71fa-40e8-f795-7232-d504cfa201fb",{"currentTime":"2023-12-25T22:01:45.531Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"81e604de-2294-c9a1-0d95-c4f9042d3545","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"81e604de-2294-c9a1-0d95-c4f9042d3545",{"currentTime":"2023-12-25T22:02:17.671Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"b275c648-832d-a556-a731-e4ea971b1ea3","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"b275c648-832d-a556-a731-e4ea971b1ea3",{"currentTime":"2023-12-25T22:02:48.803Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"1aa02f6a-7ce6-fac7-c5a3-56e527c70c3f","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"1aa02f6a-7ce6-fac7-c5a3-56e527c70c3f",{"currentTime":"2023-12-25T22:03:19.938Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"1078b83f-6edb-525b-f8cb-092ebbee2fae","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"1078b83f-6edb-525b-f8cb-092ebbee2fae",{"currentTime":"2023-12-25T22:03:52.074Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"6e45b769-2c43-f7cf-139c-0137d9f9c424","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"6e45b769-2c43-f7cf-139c-0137d9f9c424",{"currentTime":"2023-12-25T22:04:22.207Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"d09db511-6d5c-fa41-13b6-3d474b6063d4","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"d09db511-6d5c-fa41-13b6-3d474b6063d4",{"currentTime":"2023-12-25T22:04:53.339Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"c07ce8ea-f3cf-1787-2ca3-aaee4627f5f0","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"c07ce8ea-f3cf-1787-2ca3-aaee4627f5f0",{"currentTime":"2023-12-25T22:05:24.477Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"422c3028-eebe-cb46-f009-147b64f7a900","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"422c3028-eebe-cb46-f009-147b64f7a900",{"currentTime":"2023-12-25T22:05:56.609Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"e41799c8-aea1-a19b-2d4b-a5771ac45fd1","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"e41799c8-aea1-a19b-2d4b-a5771ac45fd1",{"currentTime":"2023-12-25T22:06:27.744Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f307a2c2-1d9e-d030-5a30-3e42ca14b5c6","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f307a2c2-1d9e-d030-5a30-3e42ca14b5c6",{"currentTime":"2023-12-25T22:06:58.889Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"32e90375-ae12-feed-86e9-1730a1959217","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"32e90375-ae12-feed-86e9-1730a1959217",{"currentTime":"2023-12-25T22:07:31.018Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f9489096-87be-4eed-811d-c5c1bc140f64","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f9489096-87be-4eed-811d-c5c1bc140f64",{"currentTime":"2023-12-25T22:08:01.159Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"fb478d34-b1d6-5018-2ab0-acad8c4f3294","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"fb478d34-b1d6-5018-2ab0-acad8c4f3294",{"currentTime":"2023-12-25T22:08:32.296Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"b6c4c76c-6e5b-e728-43b4-92431cbeba2f","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"b6c4c76c-6e5b-e728-43b4-92431cbeba2f",{"currentTime":"2023-12-25T22:09:03.436Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"e5e267ad-69fd-69e9-529e-da379c2c33c7","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"e5e267ad-69fd-69e9-529e-da379c2c33c7",{"currentTime":"2023-12-25T22:09:35.571Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"3ebbb072-0e73-c19c-7d3d-f176da034d87","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"3ebbb072-0e73-c19c-7d3d-f176da034d87",{"currentTime":"2023-12-25T22:10:06.705Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"873253e3-c953-ec86-7551-44f6a3c1bd2f","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"873253e3-c953-ec86-7551-44f6a3c1bd2f",{"currentTime":"2023-12-25T22:10:37.845Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"fa1b35b6-bf67-cf65-7ef6-c75ed15e6cdb","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"fa1b35b6-bf67-cf65-7ef6-c75ed15e6cdb",{"currentTime":"2023-12-25T22:11:09.979Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"d738daa7-438c-9b1d-7ff6-eda56e2c02b2","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"d738daa7-438c-9b1d-7ff6-eda56e2c02b2",{"currentTime":"2023-12-25T22:11:41.118Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"d4c0c9bc-641b-9d94-9301-c0ea60ac8571","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"d4c0c9bc-641b-9d94-9301-c0ea60ac8571",{"currentTime":"2023-12-25T22:12:11.251Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"b5a0c9b1-56f3-20d0-05ba-45ec1b790b90","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"b5a0c9b1-56f3-20d0-05ba-45ec1b790b90",{"currentTime":"2023-12-25T22:12:43.387Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"dfdae4d9-28d0-6088-48e2-36e42522aed7","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"dfdae4d9-28d0-6088-48e2-36e42522aed7",{"currentTime":"2023-12-25T22:13:15.520Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"65322701-3424-a6ce-27b2-9b9dd77b7493","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"65322701-3424-a6ce-27b2-9b9dd77b7493",{"currentTime":"2023-12-25T22:13:46.655Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"4e7386bf-9850-88b3-0fdf-6f45533c81f1","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"4e7386bf-9850-88b3-0fdf-6f45533c81f1",{"currentTime":"2023-12-25T22:14:17.791Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"486be057-1556-4018-a5de-db706302c8ed","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"486be057-1556-4018-a5de-db706302c8ed",{"currentTime":"2023-12-25T22:14:49.937Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"9e63ddb9-c95c-5b6a-20da-3ab792aa0cc7","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"9e63ddb9-c95c-5b6a-20da-3ab792aa0cc7",{"currentTime":"2023-12-25T22:15:22.072Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"a5c44ba9-6fca-9de8-22e2-a4874f108032","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"a5c44ba9-6fca-9de8-22e2-a4874f108032",{"currentTime":"2023-12-25T22:15:52.214Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ba4c8c66-e994-7c94-82fd-f4378d014f68","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ba4c8c66-e994-7c94-82fd-f4378d014f68",{"currentTime":"2023-12-25T22:16:23.346Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"bd28f719-6fe2-df00-a80f-8627ef66afb1","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"bd28f719-6fe2-df00-a80f-8627ef66afb1",{"currentTime":"2023-12-25T22:16:54.481Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f817792e-fe89-41ca-93e7-1140e728eea0","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f817792e-fe89-41ca-93e7-1140e728eea0",{"currentTime":"2023-12-25T22:17:26.623Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"c076d0e1-75ac-7529-0736-ed8694dbc973","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"c076d0e1-75ac-7529-0736-ed8694dbc973",{"currentTime":"2023-12-25T22:17:57.758Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"43ba0d11-c3f6-ea9b-a316-285281067d3c","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"43ba0d11-c3f6-ea9b-a316-285281067d3c",{"currentTime":"2023-12-25T22:18:28.893Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"58e6300e-15d2-4de4-7f11-e7dfe31c3e07","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"58e6300e-15d2-4de4-7f11-e7dfe31c3e07",{"currentTime":"2023-12-25T22:19:01.028Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ecffd386-643b-1e8a-35a1-ef2324a29fd4","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ecffd386-643b-1e8a-35a1-ef2324a29fd4",{"currentTime":"2023-12-25T22:19:31.167Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"304d2b33-bd5c-20e1-11dc-be0b05c9caec","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"304d2b33-bd5c-20e1-11dc-be0b05c9caec",{"currentTime":"2023-12-25T22:20:02.302Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"bcce2c42-3a59-7204-01ec-d3c896d490be","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"bcce2c42-3a59-7204-01ec-d3c896d490be",{"currentTime":"2023-12-25T22:20:34.438Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"4343eb66-f875-df76-bd17-e09350ad1eca","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"4343eb66-f875-df76-bd17-e09350ad1eca",{"currentTime":"2023-12-25T22:21:06.576Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"dc63e65d-8b9a-dac7-6f79-61e79ba4a740","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"dc63e65d-8b9a-dac7-6f79-61e79ba4a740",{"currentTime":"2023-12-25T22:21:38.707Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"28e61946-a4bc-b9be-db0b-a9e6dfbf44ee","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"28e61946-a4bc-b9be-db0b-a9e6dfbf44ee",{"currentTime":"2023-12-25T22:22:10.842Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"2a53c9b8-d391-7f12-0d27-0e58e526aa03","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"2a53c9b8-d391-7f12-0d27-0e58e526aa03",{"currentTime":"2023-12-25T22:22:41.978Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"241ae545-9a30-7820-3d23-6b7cb0b4d101","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"241ae545-9a30-7820-3d23-6b7cb0b4d101",{"currentTime":"2023-12-25T22:23:13.111Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"6d570521-cbcf-cacf-5118-0253f95d74be","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"6d570521-cbcf-cacf-5118-0253f95d74be",{"currentTime":"2023-12-25T22:23:44.244Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f889a0a0-82c8-6ed6-7e9d-f63b320b57d6","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f889a0a0-82c8-6ed6-7e9d-f63b320b57d6",{"currentTime":"2023-12-25T22:24:15.383Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"f56cc9eb-893f-7bd1-6834-d5f8af65b5e9","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"f56cc9eb-893f-7bd1-6834-d5f8af65b5e9",{"currentTime":"2023-12-25T22:24:47.512Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"dff57693-6ce2-fc5f-a5dc-4fce2632c4a9","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"dff57693-6ce2-fc5f-a5dc-4fce2632c4a9",{"currentTime":"2023-12-25T22:25:19.680Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"38e6586d-a5ee-2d96-bc64-229825b6bc25","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"38e6586d-a5ee-2d96-bc64-229825b6bc25",{"currentTime":"2023-12-25T22:25:51.813Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"45ec2aff-1090-8ef2-08eb-b5692aade3ca","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"45ec2aff-1090-8ef2-08eb-b5692aade3ca",{"currentTime":"2023-12-25T22:26:22.954Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"728e3fc9-b4f3-381c-e4b6-b804bba2c519","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"728e3fc9-b4f3-381c-e4b6-b804bba2c519",{"currentTime":"2023-12-25T22:26:54.091Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"5cc1c0c0-07e0-f943-03cf-2ede583ef95e","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"5cc1c0c0-07e0-f943-03cf-2ede583ef95e",{"currentTime":"2023-12-25T22:27:25.225Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"ce22dd7e-d3fa-3a11-34b1-859a60b2f2ae","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"ce22dd7e-d3fa-3a11-34b1-859a60b2f2ae",{"currentTime":"2023-12-25T22:27:56.367Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"68fbc381-80bd-00dd-78a5-925cf92717db","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"68fbc381-80bd-00dd-78a5-925cf92717db",{"currentTime":"2023-12-25T22:28:28.499Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"9c5ef32c-736b-7e2b-d019-e91688283da5","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"9c5ef32c-736b-7e2b-d019-e91688283da5",{"currentTime":"2023-12-25T22:28:59.634Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+message=spacepark001[2,"1e383ecf-d49b-ec2a-e37a-8979ea815a45","Heartbeat",{}]
+into "Heartbeat" proc
+send_to_ev_charger_json:[3,"1e383ecf-d49b-ec2a-e37a-8979ea815a45",{"currentTime":"2023-12-25T22:29:30.770Z"}]
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Cp_logs` (`id`,`cpid`,`cpsn`,`log`,`time`,`inout`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?);

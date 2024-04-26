@@ -1,0 +1,41 @@
+<div>
+    {{> message}}
+</div>
+{{#each orders}}
+    <div class="row mt-4">
+        <div class="col-md-6 mx-auto">
+            <h3 class="ml-2 font-weight-bold text-primary">訂單編號: {{this.id}}</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">商品名稱</th>
+                    <th scope="col">單價</th>
+                    <th scope="col">數量</th>
+                    <th scope="col">小計</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each this.items}}
+                    <tr>
+                        <td>{{this.name}}</td>
+                        <td>{{this.price}}</td>
+                        <td>{{this.OrderItem.quantity}}</td>
+                        <td>{{multiply this.price this.OrderItem.quantity}}</td>
+                    </tr>
+                {{/each}}
+                <tr>
+                    <td><a href="/order/{{this.id}}" class="btn btn-info">詳細資訊</a></td>
+                    <td></td>
+                    <td style="text-align: right;">
+                        <h4>Total: </h4>
+                    </td>
+                    <td>
+                        <h4>{{this.amount}}</h4>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+{{/each}}

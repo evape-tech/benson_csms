@@ -1,0 +1,65 @@
+<head>
+  <meta http-equiv="refresh" content="30">
+</head>
+
+<div class="row mt-3">
+    <div class="col-md-2">
+        <h3 class="ml-2">CP後台管理</h3>
+        <ul class="list-group">
+            <li class="list-group-item m-0"><a href="/admin/cp_list">充電樁列表</a></li>
+            <li class="list-group-item m-0"><a href="/admin/add_cp">新增充電樁</a></li>
+            <li class="list-group-item m-0"><a href="/admin/ocpp_log_list">OCPP logs</a></li>
+
+        </ul>
+    </div>
+    <div class="col-md-10">
+        {{> message}}
+
+            <h5><span style="background-color: aqua;">OCPP logs</span></h5>
+
+
+
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col" class="text-center">cpsn</th>
+                <th scope="col" class="text-center">log</th>
+                <th scope="col" class="text-center">in/out</th>
+                <th scope="col" class="text-center">time</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            {{#each ocpp_log_list}}
+                <tr style="height: 40px">
+                    <td class="text-center align-middle">{{this.cpsn}}</td>
+                    <td class="text-center align-middle">{{this.log}}</td>
+                    <td class="text-center align-middle">{{this.inout}}</td>
+                    <td class="text-center align-middle">{{this.time}}</td>
+
+                </tr>
+            {{/each}}
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script language="JavaScript">
+
+/*
+    console.log("hi")
+    var client = mqtt.connect("ws://localhost:11883") // you add a ws:// url here
+client.on('connect', ()=>{
+  console.log('connected.');
+  //location.reload()
+  client.subscribe("/benson_csms_mqtt_all/")
+  client.on("message", function (topic, payload) {
+    console.log(payload);
+    console.log([topic, payload].join(": "));
+    // client.end()
+  });
+})
+*/
+</script>

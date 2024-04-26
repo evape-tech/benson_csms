@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-md-9 mt-3">
+        {{>message}}
+        <div class="row">
+
+            {{#each products.rows}}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="bd-placeholder-img card-img-top w-100" src={{this.dataValues.image}} alt="{{this.dataValues.name}}" height="225"/>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <h4 class="title">{{this.dataValues.name}}</h4>
+                                <p class="ellipsis">{{this.dataValues.description}}</p>
+                                <h5 class="price text-center">$ {{this.dataValues.price}}</h5>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="btn-group">
+                                    <form action="/cart" method="POST">
+                                        <input type="hidden" name="productId" value="{{this.dataValues.id}}">
+                                        <button type="submit" class="btn btn-outline-custom"><i class="fas fa-shopping-cart fa-1x mr-2"></i>加入購物車</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+        <div class="container container-customer mx-auto">
+            <nav class="d-flex justify-content-center align-items-center py-5">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="/products?page={{prev}}"> << </a>
+                    </li>
+                    {{#each totalPage}}
+                        {{#equal this ../page}}
+                            <li class="page-item active">
+                                <a class="page-link" href="/products?page={{this}}">{{this}}</a>
+                            </li>
+                        {{else}}
+                            <li class="page-item">
+                                <a class="page-link" href="/products?page={{this}}">{{this}}</a>
+                            </li>
+                        {{/equal}}
+                    {{/each}}
+                    <li class="page-item">
+                        <a class="page-link" href="/products?page={{next}}"> >> </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <nav class="col-md-3 d-none d-md-block bg-light sidebar my-3">
+        <div class="sidebar-sticky">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-0">
+
+                    {{#if cart}}
+                        {{#each cart.items}}
+                            <div class="row no-gutters my-3">
+                                <div class="col-md-6">
+                                    <img src="{{this.image}}" alt="{{this.name}}" class="h-100">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h5 class="subtitle">{{this.name}}</h5>
+                                        <h5 class="price my-2">${{this.price}}</h5>
+                                        <p class="my-2">數量: {{this.CartItem.quantity}}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+
+                                            <form action="/cartItem/{{this.CartItem.id}}/add" method="POST">
+                                                <button type="submit" class="btn btn-custom-small">+</button>
+                                            </form>
+                                            <form action="/cartItem/{{this.CartItem.id}}/sub" method="POST">
+                                                <button type="submit" class="btn btn-custom-small">-</button>
+                                            </form>
+                                            <form action="/cartItem/{{this.CartItem.id}}?_method=DELETE" method="POST">
+                                                <button type="submit" class="btn btn-custom-small"><i class="fas fa-trash"></i></button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+
+                </li>
+            </ul>
+            <hr>
+            <li class="list-group-item text-center" style="font-size: 1.5em;">
+                Total: ${{#if totalPrice}}{{totalPrice}}{{/if}}
+            </li>
+            <a href="/cart" class="btn mt-3 btn-outline-custom w-100">前往購物車</a>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h2 class="text-center my-3">
+            後台登入
+            </h2>
+            {{> message}}
+
+            <form action="/admin/sign-in" method="POST">
+        
+            <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email ..."
+                       value="{{ email }}" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password ..."
+                       required>
+            </div>
+            <button type="submit" class="btn btn-custom w-100">SignIn</button>
+        </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row mt-3">
+    <div class="col-md-2">
+        <h3 class="ml-2">cp後台管理</h3>
+        <ul class="list-group">
+          <li class="list-group-item m-0"><a href="/admin/cp_list">充電樁列表</a></li>
+          <li class="list-group-item m-0"><a href="/admin/add_cp">新增充電樁</a></li>
+          <li class="list-group-item m-0"><a href="/admin/ocpp_log_list">OCPP logs</a></li>
+          </ul>
+    </div>
+    <div class="col-md-10">
+        {{> message}}
+
+        <form action="/admin/post_edit_cp/{{current_gun.id}}" method="POST">
+            <h5><span style="background-color: aqua;">編輯充電樁</span></h5>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="name">cpid</span>
+            <input type="text" class="form-control"  name="cpid" value="{{current_gun.cpid}}" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="price">connector</span>
+            <input type="text" class="form-control" name="connector" value="{{current_gun.connector}}" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="connector">cpsn</span>
+            <input type="text" class="form-control" name="cpsn" value="{{current_gun.cpsn}}" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="guns_memo1">描述</span>
+            <textarea class="form-control" name="guns_memo1" id="description">{{current_gun.guns_memo1}}</textarea>
+        </div>
+
+            <button type="submit" class="btn btn-outline-info mb-3">確定編輯</button>
+
+        </form>
+
+
+    </div>
+</div>
