@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>ws test</title>
+
+<body>
+  <textarea id="txtShow" disabled></textarea>
+  <input id="txtInput" type="text">
+  <button id="btnSend">送出</button>
+
+
+
+     <script language="JavaScript">
+     document.addEventListener("DOMContentLoaded", event => {
+       let keyinDom = document.querySelector('#txtInput')
+       let showDom = document.querySelector('#txtShow')
+
+       document.querySelector("#btnSend").addEventListener('click',() => {
+         let txt = keyinDom.value;
+         ws.send(txt);
+       })
+
+       // 建立 WebSocket (本例 server 端於本地運行)
+    //  let url = 'ws://rcu.dq1.tw:8089/ocpp/1001'
+          let url = 'ws://34.80.61.43:8089/ocpp/1001'
+    //   let url = 'ws://localhost:8080'
+ //https://ocpp2-aqdlok7jqq-uc.a.run.app
+       var ws = new WebSocket(url)
+       // 監聽連線狀態
+       ws.onopen = function() {
+    console.log("WS opened; protocol chosen:", this.protocol);
+    	var tt_obj=[2,"cf322c62-1067-47c6-b564-a153ed096ff7","BootNotification",{"chargePointModel":"ASOCPP0101","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AT2206110147","firmwareVersion":"V1.6.12-SignlePhase"}]
+      ws.send(JSON.stringify(tt_obj))
+};
+
+
+
+ws.onclose = () => {
+  console.log('close connection');
+}
+/*
+       ws.onopen = () => {
+         console.log('open connection')
+       }
+       ws.onclose = () => {
+         console.log('close connection');
+       }
+       */
+       //接收 Server 發送的訊息
+       ws.onmessage = event => {
+         let txt = event.data
+         if (!showDom.value) showDom.value = txt
+         else showDom.value = showDom.value + "\n" + txt
+         keyinDom.value = ""
+       }
+
+
+     });
+
+
+      </script>
+
+
+</body>
+</html>

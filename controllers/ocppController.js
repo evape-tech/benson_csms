@@ -253,6 +253,20 @@ async function ocpp_send_command(cpid,cmd) {
    gun.transactionid = "2222"
  }
 
+ if(cmd=="ocpp_heartbeat"){
+  var now_time=new Date(+new Date() + 8 * 3600 * 1000)
+ //  var now_time=new Date()
+  await gun.update({
+        guns_memo2:JSON.stringify(now_time)
+  })
+ //  console.log("now_time="+now_time);
+  //console.log("gun.memo2="+now_time.toISOString());
+  //console.log('ocpp_heartbeat:'+JSON.stringify(now_time.toISOString()))
+  //var newnewtime= new Date(+new Date() + 8 * 3600 * 1000)
+  //console.log('now_time='+JSON.stringify(now_time))
+  //console.log('--- newnew_time='+JSON.stringify(newnewtime-now_time))
+  }
+
   if(cmd=="ocpp_status"){
     const result = { succeed: true };
   var  ocpp_id_send="bensoncsms-101-ocpp-send-StatusNotification";
@@ -841,6 +855,27 @@ catch (e) {
                console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
 
 
+                if(    wsCpdatas[req.params.id][0].connector_1_meter.cpid_mapping != "" ){
+                  var c_cpid=wsCpdatas[req.params.id][0].connector_1_meter.cpid_mapping;
+                  console.log("this cpid is="+JSON.stringify(c_cpid));
+                    ocpp_send_command(c_cpid,"ocpp_heartbeat");
+                }
+                if(    wsCpdatas[req.params.id][0].connector_2_meter.cpid_mapping != "" ){
+                  var c_cpid=wsCpdatas[req.params.id][0].connector_2_meter.cpid_mapping;
+                  console.log("this cpid is="+JSON.stringify(c_cpid));
+                    ocpp_send_command(c_cpid,"ocpp_heartbeat");
+                }
+                if(    wsCpdatas[req.params.id][0].connector_3_meter.cpid_mapping != "" ){
+                  var c_cpid=wsCpdatas[req.params.id][0].connector_3_meter.cpid_mapping;
+                  console.log("this cpid is="+JSON.stringify(c_cpid));
+                    ocpp_send_command(c_cpid,"ocpp_heartbeat");
+                }
+                if(    wsCpdatas[req.params.id][0].connector_4_meter.cpid_mapping != "" ){
+                  var c_cpid=wsCpdatas[req.params.id][0].connector_4_meter.cpid_mapping;
+                  console.log("this cpid is="+JSON.stringify(c_cpid));
+                    ocpp_send_command(c_cpid,"ocpp_heartbeat");
+                }
+                
               Cp_log.create({
                     // id: 2,
                      cpid: id,

@@ -136,7 +136,7 @@ const adminController = {
   start_charging: async (req, res) => {
     console.log("start_charging_cpid:"+JSON.stringify(req.params.id))
     const id = req.params.id
-      const api = 'http://rcu.dq1.tw:8089/ocpp/spacepark_cp_api';
+      const api = 'http://localhost:8089/ocpp/spacepark_cp_api';
     axios.post(api,{
       apikey:'cp_api_key16888',
       cp_id: id,
@@ -166,7 +166,7 @@ const adminController = {
   stop_charging: async (req, res) => {
     console.log("stop_charging_cpid:"+JSON.stringify(req.params.id))
     const id = req.params.id
-      const api = 'http://rcu.dq1.tw:8089/ocpp/spacepark_cp_api';
+      const api = 'http://localhost:8089/ocpp/spacepark_cp_api';
     axios.post(api,{
       apikey:'cp_api_key16888',
       cp_id: id,
