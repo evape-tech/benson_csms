@@ -237,6 +237,7 @@ async function ocpp_send_command(cpid,cmd) {
   //外站接口
   //gun_cpid={"id":4,"connector":"0","cpsn":"spacepark102","guns_data1":"Available","createdAt":null,"updatedAt":"2024-01-09"}
     console.log("into function ocpp_send_command");
+
     const gun = await Gun.findOne({ where: { cpid : cpid } })
   //  console.log("gun="+gun);
     const cpsn = gun.cpsn;
@@ -254,10 +255,11 @@ async function ocpp_send_command(cpid,cmd) {
  }
 
  if(cmd=="ocpp_heartbeat"){
-  var now_time=new Date(+new Date() + 8 * 3600 * 1000)
+   var now_time=new Date(+new Date() + 8 * 3600 * 1000).toISOString()
  //  var now_time=new Date()
   await gun.update({
-        guns_memo2:JSON.stringify(now_time)
+      //  guns_memo2:JSON.stringify(now_time)
+            guns_memo2:now_time
   })
  //  console.log("now_time="+now_time);
   //console.log("gun.memo2="+now_time.toISOString());
@@ -875,7 +877,7 @@ catch (e) {
                   console.log("this cpid is="+JSON.stringify(c_cpid));
                     ocpp_send_command(c_cpid,"ocpp_heartbeat");
                 }
-                
+
               Cp_log.create({
                     // id: 2,
                      cpid: id,
