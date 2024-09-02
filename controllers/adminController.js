@@ -100,7 +100,8 @@ const adminController = {
         console.log("now_time:"+ now_time)
           console.log("cp_list[0].guns_memo3:"+ cp_list[0].guns_memo3)
             console.log("cp_list[0].guns_memo4:"+ cp_list[0].guns_memo4)
-             cp_list[0].guns_memo5 = cp_list[0].guns_memo4 - cp_list[0].guns_memo3
+            // Date.parse('01 Jan 1970 00:00:00 GMT');
+             cp_list[0].guns_memo5 = Date.parse(cp_list[0].guns_memo4) -  Date.parse(cp_list[0].guns_memo3) 
               console.log("cp_list[0].guns_memo5:"+ cp_list[0].guns_memo5)
       return res.render('admin/cp_list', { cp_list })
     } catch (e) {
