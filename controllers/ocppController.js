@@ -74,7 +74,7 @@ async function update_cp_status_changed(gun_cpsn,gun_connector,gun_status){
       var now_time=new Date(+new Date() + 8 * 3600 * 1000).toISOString()
         console.log("gun_cpid="+JSON.stringify(gun_cpid));
         if(gun_cpid !== null){
-          console.log("find gun_cpid !!!!!! into gun_cpid.update()");
+          console.log("find gun_cpid !!!!!! into update_cp_status_changed()");
           if(gun_status=="Charging"){
             await gun_cpid.update({
               guns_memo3:now_time
@@ -85,14 +85,16 @@ async function update_cp_status_changed(gun_cpsn,gun_connector,gun_status){
         //         cp_list[0].guns_memo5 = Date.parse(cp_list[0].guns_memo4) -  Date.parse(cp_list[0].guns_memo3)
 
               var total_charging_time = Date.parse(now_time) -  Date.parse(gun_cpid.guns_memo3)
+              total_charging_time = total_charging_time / 1000 / 60
+              total_charging_time = total_charging_time.toFixed(2)
               await gun_cpid.update({
                 guns_memo4:now_time,
-                guns_memo5:total_charging_time / 1000 / 60
+                guns_memo5:total_charging_time
               })
             }else{
               await gun_cpid.update({
-                  guns_memo3:now_time,
-                guns_memo4:now_time
+                  guns_memo3:"",
+                guns_memo4:""
               })
             }
 
@@ -873,6 +875,7 @@ catch (e) {
                   if(cp_current_status!=j_aa[3].status){
                   cp_current_status=j_aa[3].status;
              //     cp_status_changed();
+               update_cp_status_changed(id,j_aa[3].connectorId,j_aa[3].status)
                 }
                  cp_current_status=j_aa[3].status;
                  console.log('status='+cp_current_status)
