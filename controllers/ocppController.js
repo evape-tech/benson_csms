@@ -77,7 +77,9 @@ async function update_cp_status_changed(gun_cpsn,gun_connector,gun_status){
           console.log("find gun_cpid !!!!!! into update_cp_status_changed()");
           if(gun_status=="Charging"){
             await gun_cpid.update({
-              guns_memo3:now_time
+              guns_memo3:now_time,
+                guns_memo4:"",
+                  guns_memo5:""
             })
           }
           if(gun_status=="Finishing"){
@@ -94,7 +96,8 @@ async function update_cp_status_changed(gun_cpsn,gun_connector,gun_status){
             }else{
               await gun_cpid.update({
                   guns_memo3:"",
-                guns_memo4:""
+                guns_memo4:"",
+                  guns_memo5:""
               })
             }
 
