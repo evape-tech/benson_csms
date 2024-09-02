@@ -82,15 +82,17 @@ async function update_cp_status_changed(gun_cpsn,gun_connector,gun_status){
           }
           if(gun_status=="Finishing"){
             if(gun_cpid.guns_memo3 !== null){
-              var total_charging_time = now_time - gun_cpid.guns_memo3
+        //         cp_list[0].guns_memo5 = Date.parse(cp_list[0].guns_memo4) -  Date.parse(cp_list[0].guns_memo3)
+
+              var total_charging_time = Date.parse(now_time) -  Date.parse(gun_cpid.guns_memo3)
               await gun_cpid.update({
                 guns_memo4:now_time,
                 guns_memo5:total_charging_time / 1000 / 60
               })
             }else{
               await gun_cpid.update({
-                guns_memo4:now_time,
-                guns_memo5:now_time
+                  guns_memo3:now_time,
+                guns_memo4:now_time
               })
             }
 
