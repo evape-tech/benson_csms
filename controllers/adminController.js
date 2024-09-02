@@ -115,15 +115,9 @@ const adminController = {
 
         if(cp_list[i].guns_memo2 == null){
           cp_list[i].guns_status = "offline";
-          await cp_list[i].update({
-            guns_status:"offline"
-          })
         }
           if(cp_list[i].guns_memo6 > 10){
             cp_list[i].guns_status = "offline";
-            await cp_list[i].update({
-              guns_status:"offline"
-            })
           }
       console.log(cp_list[i].guns_memo6);
     }
