@@ -104,8 +104,11 @@ const adminController = {
     //         cp_list[0].guns_memo5 = Date.parse(cp_list[0].guns_memo4) -  Date.parse(cp_list[0].guns_memo3)
     //          console.log("cp_list[0].guns_memo5:"+ cp_list[0].guns_memo5)
     for(let i = 0; i < cp_list.length; i++){
-      cp_list[i].guns_memo6 = Date.parse(cp_list[i].guns_memo2) -  Date.parse(now_time)
-      console.log(cp_list[i].guns_memo6); // 1 2 3
+      cp_list[i].guns_memo6 = (Date.parse(now_time) - Date.parse(cp_list[i].guns_memo2) )/1000/60
+
+        if(cp_list[i].guns_memo2 == null){cp_list[i].guns_status = "offline"}
+          if(cp_list[i].guns_memo6 > 10){cp_list[i].guns_status = "offline"}
+      console.log(cp_list[i].guns_memo6);
     }
       return res.render('admin/cp_list', { cp_list })
     } catch (e) {
