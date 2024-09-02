@@ -66,6 +66,54 @@ async function read_data(){
    return rdsn;
 }
 
+//cp_status_changed
+async function update_cp_status_changed(gun_cpsn,gun_connector,gun_status){
+  console.log("update_cp_status_changed");
+
+   const gun_cpid = await Gun.findOne({ where: { cpsn : gun_cpsn, connector : gun_connector } })
+      var now_time=new Date(+new Date() + 8 * 3600 * 1000).toISOString()
+        console.log("gun_cpid="+JSON.stringify(gun_cpid));
+        if(gun_cpid !== null){
+          console.log("find gun_cpid !!!!!! into gun_cpid.update()");
+          if(gun_status=="Charging"){
+            await gun_cpid.update({
+              guns_memo3:now_time
+            })
+          }
+          if(gun_status=="Finishing"){
+            if(gun_cpid.guns_memo3 !== null){
+              var total_charging_time = now_time - gun_cpid.guns_memo3
+              await gun_cpid.update({
+                guns_memo4:now_time,
+                guns_memo5:total_charging_time / 1000 / 60
+              })
+            }else{
+              await gun_cpid.update({
+                guns_memo4:now_time,
+                guns_memo5:now_time
+              })
+            }
+
+          }
+          await gun_cpid.update({
+            guns_status:gun_status,
+            guns_memo2:now_time
+          })
+          if(gun_connector =="1"){
+              await send_cp_to_kw_api(gun_cpid.cpid,gun_status,gun_cpid.guns_metervalue1,gun_cpid.guns_metervalue2,gun_cpid.guns_metervalue3,gun_cpid.guns_metervalue4,gun_cpid.guns_metervalue5,gun_cpid.guns_metervalue6)
+          }
+          if(gun_connector =="2"){
+              await send_cp_to_kw_api(gun_cpid.cpid,gun_status,gun_cpid.guns_metervalue1,gun_cpid.guns_metervalue2,gun_cpid.guns_metervalue3,gun_cpid.guns_metervalue4,gun_cpid.guns_metervalue5,gun_cpid.guns_metervalue6)
+          }
+        }
+        else{
+          console.log("gun_cpid not find == null!!!!!");
+
+        }
+
+   return 0;
+}
+
 async function update_guns_status(gun_cpsn,gun_connector,gun_status){
   console.log("update_guns_status");
 
