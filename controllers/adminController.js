@@ -106,15 +106,11 @@ const adminController = {
     for(let i = 0; i < cp_list.length; i++){
       cp_list[i].guns_memo6 = (Date.parse(now_time) - Date.parse(cp_list[i].guns_memo2) )/1000/60
         cp_list[i].guns_memo6 =   cp_list[i].guns_memo6.toFixed(2)
-        await cp_list[i].update({
-          guns_memo6: cp_list[i].guns_memo6
-        })
+
         if(cp_list[i].guns_status == "Charging"){
           cp_list[i].guns_memo5=(Date.parse(now_time) - Date.parse(cp_list[i].guns_memo3) )/1000/60
               cp_list[i].guns_memo5 =   cp_list[i].guns_memo5.toFixed(2)
-          await cp_list[i].update({
-            guns_memo5: cp_list[i].guns_memo5
-          })
+
         }
 
         if(cp_list[i].guns_memo2 == null){
