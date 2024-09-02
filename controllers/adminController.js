@@ -100,6 +100,7 @@ const adminController = {
         console.log("now_time:"+ now_time)
           console.log("cp_list[0].guns_memo3:"+ cp_list[0].guns_memo3)
             console.log("cp_list[0].guns_memo4:"+ cp_list[0].guns_memo4)
+             cp_list[0].guns_memo5 = cp_list[0].guns_memo4 - cp_list[0].guns_memo3
               console.log("cp_list[0].guns_memo5:"+ cp_list[0].guns_memo5)
       return res.render('admin/cp_list', { cp_list })
     } catch (e) {
