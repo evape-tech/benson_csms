@@ -97,7 +97,10 @@ const adminController = {
     //  return res.render('admin/products', { products })
     var now_time=new Date(+new Date() + 8 * 3600 * 1000).toISOString()
           //  var total_charging_time = now_time - ocpp.guns_memo3
-          cp_list[0].guns_memo5=  cp_list[0].guns_memo4 - cp_list[0].guns_memo3
+        console.log("now_time:"+ now_time)
+          console.log("cp_list[0].guns_memo3:"+ cp_list[0].guns_memo3)
+            console.log("cp_list[0].guns_memo4:"+ cp_list[0].guns_memo4)
+              console.log("cp_list[0].guns_memo5:"+ cp_list[0].guns_memo5)
       return res.render('admin/cp_list', { cp_list })
     } catch (e) {
       console.log(e)
