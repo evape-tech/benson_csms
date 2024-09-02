@@ -32,6 +32,10 @@
                 <th scope="col" class="text-center">功率(data4)</th>
                 <th scope="col" class="text-center">保留(data5)</th>
                 <th scope="col" class="text-center">回合碼(data6)</th>
+                  <th scope="col" class="text-center">充電開始</th>
+                    <th scope="col" class="text-center">充電結束</th>
+                      <th scope="col" class="text-center">充電時程</th>
+                        <th scope="col" class="text-center">memo6</th>
                 <th scope="col" class="text-center">描述</th>
                 <th scope="col" class="text-center">最後更新</th>
                 <th scope="col" class="text-center">充電操作</th>
@@ -53,12 +57,15 @@
                     <td class="text-center align-middle">{{this.guns_metervalue4}}</td>
                     <td class="text-center align-middle">{{this.guns_metervalue5}}</td>
                     <td class="text-center align-middle">{{this.guns_metervalue6}}</td>
+                       <td class="text-center align-middle">{{this.guns_memo3}}</td>
+                       <td class="text-center align-middle">{{this.guns_memo4}}</td>
+                       <td class="text-center align-middle">{{this.guns_memo5}}</td>
+                       <td class="text-center align-middle">{{this.guns_memo6}}</td>                                                    
                     <td class="text-center align-middle">{{this.guns_memo1}}</td>
                     <td class="text-center align-middle">{{this.guns_memo2}}</td>
                     <td class="text-center align-middle">
                       <a href="/admin/start_charging/{{this.cpid}}" class="btn btn-success">啟動</a>
                       <a href="/admin/stop_charging/{{this.cpid}}" class="btn btn-danger">停止</a>
-
                     </td>
 
                     <td class="text-center align-middle">

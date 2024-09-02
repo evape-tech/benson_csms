@@ -1,4 +1,5 @@
-//last updated at 2024_0722_1500
+
+//last updated at 2024_0902_1504
 const db = require('../models')
 const Order = db.Order
 const OrderItem = db.OrderItem
@@ -88,8 +89,6 @@ async function update_guns_status(gun_cpsn,gun_connector,gun_status){
           console.log("gun_cpid not find == null!!!!!");
 
         }
-
-
 
    return 0;
 }

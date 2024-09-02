@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
     guns_metervalue6 : DataTypes.STRING,
     guns_memo1 : DataTypes.STRING,
     guns_memo2 : DataTypes.STRING,
+    guns_memo3 : DataTypes.STRING,
+    guns_memo4 : DataTypes.STRING,
+    guns_memo5 : DataTypes.STRING,
+    guns_memo6 : DataTypes.STRING,
     transactionid : DataTypes.STRING
   }, {
     sequelize,
