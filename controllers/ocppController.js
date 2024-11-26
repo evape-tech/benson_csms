@@ -259,6 +259,7 @@ else{
 
    return 0;
 }
+}
 
 async function send_cp_to_kw_api(kw_cpid,kw_gun_status,data1,data2,data3,data4,data5,data6) {
   //外站接口
