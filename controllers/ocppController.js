@@ -183,6 +183,16 @@ async function update_guns_meters(gun_cpsn,gun_connector,gun_data1,gun_data2,gun
    var now_time=new Date(+new Date() + 8 * 3600 * 1000).toISOString()
 
 if(gun_cpid !== null){
+  if(gun_cpid !== null){
+    await gun_cpid.update({
+      guns_metervalue1:gun_data1,
+        guns_metervalue2:gun_data2,
+          guns_metervalue3:gun_data3,
+          guns_metervalue4:gun_data4,
+          guns_metervalue5:"0.00",
+          guns_metervalue6:"0.00",
+          guns_memo2:now_time
+    })
 
   if(gun_data1 != gun_cpid.guns_metervalue1){
     console.log("before metervalues1 ="+gun_cpid.guns_metervalue1+"new is="+gun_data1);
@@ -324,27 +334,11 @@ async function ocpp_send_command(cpid,cmd) {
   //console.log('--- newnew_time='+JSON.stringify(newnewtime-now_time))
   }
 
-  if(cmd=="ocpp_status"){
-    const result = { succeed: true };
-  var  ocpp_id_send="bensoncsms-101-ocpp-send-StatusNotification";
-    var tt_obj=[2,ocpp_id_send,"TriggerMessage",{"connectorId":parseInt(gun.connector),"requestedMessage":"StatusNotification"}]
-  console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
-    if(wsClients[cpsn] !== undefined) {
-        wsClients[cpsn].forEach((client) => {
-            client.send(JSON.stringify(tt_obj));
-        });
-    } else {
-        // 如果消息接收方没有连接，则返回错误信息
-        result.succeed = false;
-        result.msg = '对方不在线';
-    }
-    console.log('result:'+JSON.stringify(result))
-    }
 
-    if(cmd=="ocpp_meters"){
+    if(cmd=="ocpp_status"){
       const result = { succeed: true };
-    var  ocpp_id_send="bensoncsms-101-ocpp-send-MeterValues";
-    var tt_obj=[2,"bensoncsms-101-ocpp-send-MeterValues","TriggerMessage",{"requestedMessage":"MeterValues","connectorId":parseInt(gun.connector)}]
+    var  ocpp_id_send="667751515";
+      var tt_obj=[2,ocpp_id_send,"TriggerMessage",{"connectorId":parseInt(gun.connector),"requestedMessage":"StatusNotification"}]
     console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
       if(wsClients[cpsn] !== undefined) {
           wsClients[cpsn].forEach((client) => {
@@ -358,33 +352,11 @@ async function ocpp_send_command(cpid,cmd) {
       console.log('result:'+JSON.stringify(result))
       }
 
-    if(cmd=="ocpp_stop_charging"){
-      const result = { succeed: true };
-      var  ocpp_id_send="bensoncsms-101-ocpp-send-stop_charging";
-    //  var tt_obj=[2,"bensoncsms-101-ocpp-send-stop_charging","RemoteStopTransaction",{"connectorId":parseInt(gun.connector),"transactionId":parseInt(gun.transactionid)}]
-    var tt_obj=[2,"bensoncsms-101-ocpp-send-stop_charging","RemoteStopTransaction",{"transactionId":parseInt(gun.transactionid)}]
-
-      console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
-      if(wsClients[cpsn] !== undefined) {
-          wsClients[cpsn].forEach((client) => {
-              client.send(JSON.stringify(tt_obj));
-          });
-      } else {
-          // 如果消息接收方没有连接，则返回错误信息
-          result.succeed = false;
-          result.msg = '对方不在线';
-      }
-      console.log('result:'+JSON.stringify(result))
-      }
-
-      if(cmd=="ocpp_start_charging"){
+      if(cmd=="ocpp_meters"){
         const result = { succeed: true };
-        var  ocpp_id_send="bensoncsms-101-ocpp-send-start_charging";
-        //  var tt_obj=[2,"667701","RemoteStartTransaction",{"idTag":idtag_id,"connectorId":1}]
-      //  var tt_obj=[2,"bensoncsms-101-ocpp-send-start_charging","RemoteStartTransaction",{"idTag":idtag_id,"connectorId":parseInt(gun.connector),"transactionId":parseInt(gun.transactionid)}]
-      var tt_obj=[2,"bensoncsms-101-ocpp-send-start_charging","RemoteStartTransaction",{"idTag":idtag_id,"connectorId":parseInt(gun.connector)}]
-
-        console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
+      var  ocpp_id_send="667751515";
+      var tt_obj=[2,"667751515","TriggerMessage",{"requestedMessage":"MeterValues","connectorId":parseInt(gun.connector)}]
+      console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
         if(wsClients[cpsn] !== undefined) {
             wsClients[cpsn].forEach((client) => {
                 client.send(JSON.stringify(tt_obj));
@@ -396,6 +368,45 @@ async function ocpp_send_command(cpid,cmd) {
         }
         console.log('result:'+JSON.stringify(result))
         }
+
+        if(cmd=="ocpp_stop_charging"){
+          const result = { succeed: true };
+          var  ocpp_id_send="667751515";
+        //  var tt_obj=[2,"bensoncsms-101-ocpp-send-stop_charging","RemoteStopTransaction",{"connectorId":parseInt(gun.connector),"transactionId":parseInt(gun.transactionid)}]
+        var tt_obj=[2,"667751515","RemoteStopTransaction",{"transactionId":parseInt(gun.transactionid)}]
+
+          console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
+          if(wsClients[cpsn] !== undefined) {
+              wsClients[cpsn].forEach((client) => {
+                  client.send(JSON.stringify(tt_obj));
+              });
+          } else {
+              // 如果消息接收方没有连接，则返回错误信息
+              result.succeed = false;
+              result.msg = '对方不在线';
+          }
+          console.log('result:'+JSON.stringify(result))
+          }
+
+          if(cmd=="ocpp_start_charging"){
+            const result = { succeed: true };
+            var  ocpp_id_send="667751515";
+              var tt_obj=[2,"667751515","RemoteStartTransaction",{"idTag":idtag_id,"connectorId":1}]
+          //  var tt_obj=[2,"bensoncsms-101-ocpp-send-start_charging","RemoteStartTransaction",{"idTag":idtag_id,"connectorId":parseInt(gun.connector),"transactionId":parseInt(gun.transactionid)}]
+        //  var tt_obj=[2,"bensoncsms-101-ocpp-send-start_charging","RemoteStartTransaction",{"idTag":idtag_id,"connectorId":parseInt(gun.connector)}]
+
+            console.log('send_to_ev_charger_json:'+JSON.stringify(tt_obj))
+            if(wsClients[cpsn] !== undefined) {
+                wsClients[cpsn].forEach((client) => {
+                    client.send(JSON.stringify(tt_obj));
+                });
+            } else {
+                // 如果消息接收方没有连接，则返回错误信息
+                result.succeed = false;
+                result.msg = '对方不在线';
+            }
+            console.log('result:'+JSON.stringify(result))
+            }
 
 
 }
@@ -1061,74 +1072,158 @@ catch (e) {
                }
                if(j_aa[2]=="MeterValues"){
                  console.log('into "MeterValues" proc')
-/*
-[2,"cb41ee88-af8b-749c-ec04-40d4ef4e802b","MeterValues",{"connectorId":2,"transactionId":0,"meterValue":[{"timestamp":"2023-12-26T22:27:56.001Z",
-"sampledValue":[
-  {"value":"2759.100","unit":"Wh","context":"Sample.Periodic","format":"Raw","measurand":"Energy.Active.Import.Register","location":"Outlet"}
-  ]
-}]
-}]
 
-[2,"f8350340-162a-2b01-b1dd-d5050b750606","MeterValues",
-{
-"connectorId":2,
-"transactionId":0,
-"meterValue":[
- {"timestamp":"2023-12-26T15:01:56.001Z",
-  "sampledValue":[
-    {"value":"4.320","context":"Sample.Periodic","format":"Raw","measurand":"Current.Import","phase":"L1","location":"Outlet","unit":"A"},
-    {"value":"1949.200","unit":"Wh","context":"Sample.Periodic","format":"Raw","measurand":"Energy.Active.Import.Register","location":"Outlet"},
-    {"value":"0.979","context":"Sample.Periodic","format":"Raw","measurand":"Power.Active.Import","phase":"L1-N","location":"Outlet","unit":"kW"},
-    {"value":"227.300","context":"Sample.Periodic","format":"Raw","measurand":"Voltage","phase":"L1-N","location":"Outlet","unit":"V"}               ]
- }
-]
-}
-]
-*/
-               //need to catch all_message[3].meterValue[0].sampledValue[0]=data1,[1]=data2,[4]=data3
-             //if(j_aa[3].meterValue[0].sampledValue[0].value>0){cp_data1 = j_aa[3].meterValue[0].sampledValue[0].value;}
-             //if(j_aa[3].meterValue[0].sampledValue[1].value>0){cp_data2 = j_aa[3].meterValue[0].sampledValue[1].value;}
-             //if(j_aa[3].meterValue[0].sampledValue[4].value>0){cp_data3 = j_aa[3].meterValue[0].sampledValue[4].value;}
-
-//ABB meters messages:
-//[2, "2982648", "MeterValues", {"connectorId": 1, "transactionId": 1111, "meterValue": [{"timestamp": "2024-02-26T07:46:22.000Z",
-// "sampledValue": [
-//{"value": "228.90", "context": "Sample.Periodic", "format": "Raw", "measurand": "Voltage", "phase": "L1-L2", "unit": "V"},
-// {"value": "0.0", "context": "Sample.Periodic", "format": "Raw", "measurand": "Current.Import", "phase": "L1", "unit": "A"},
-// {"value": "0", "context": "Sample.Periodic", "format": "Raw", "measurand": "Power.Active.Import", "phase": "L1", "unit": "W"},
-// {"value": "0", "context": "Sample.Periodic", "format": "Raw", "measurand": "Energy.Active.Import.Register", "unit": "Wh"}]}]}]
 console.log("now in metervalues id="+id);
+if(id[0]=="G" && id[1]=="S"){
+  console.log("GSGSGSGSGSGSGS---------------------this is GS's meters");
+  console.log("GSGSGSGSGSGSGS---------------------this is GS's meters");
+  console.log("GSGSGSGSGSGSGS---------------------this is GS's meters");
+  console.log("GSGSGSGSGSGSGS---------------------this is GS's meters");
+  console.log('metervalue_[0]:'+j_aa[3].meterValue[0].sampledValue[0].value);
+  console.log('metervalue_[1]:'+j_aa[3].meterValue[0].sampledValue[1].value);
+  console.log('metervalue_[2]:'+j_aa[3].meterValue[0].sampledValue[2].value);
+  console.log('metervalue_[3]:'+j_aa[3].meterValue[0].sampledValue[3].value);
+  console.log('metervalue_[4]:'+j_aa[3].meterValue[0].sampledValue[4].value);
+  console.log('metervalue_[5]:'+j_aa[3].meterValue[0].sampledValue[5].value);
+  console.log('metervalue_[6]:'+j_aa[3].meterValue[0].sampledValue[6].value);
+  console.log('metervalue_[7]:'+j_aa[3].meterValue[0].sampledValue[7].value);
+  console.log('metervalue_[8]:'+j_aa[3].meterValue[0].sampledValue[8].value);
+  console.log('metervalue_[9]:'+j_aa[3].meterValue[0].sampledValue[9].value);
 
-if(id[0]=="T" && id[1]=="A" && id[2]=="C"){
-  console.log("this is ABB's meters");
-  var meter_connectorid=j_aa[3].connectorId
- var meter_transactionid= j_aa[3].transactionId
-             console.log('metervalue_connectorid:'+meter_connectorid);
-             console.log('metervalue_transactionid:'+meter_transactionid);
-             cp_data1 =  j_aa[3].meterValue[0].sampledValue[3].value
-             cp_data1 = cp_data1/1000
-             cp_data2 =  j_aa[3].meterValue[0].sampledValue[1].value
-             cp_data3 =  j_aa[3].meterValue[0].sampledValue[0].value
-             cp_data1 = cp_data1.toFixed(3)
-             cp_data4 = cp_data2*cp_data3;
-             cp_data4 = cp_data4.toFixed(3)
-             console.log('metervalue_In-charging khw_cp_data1:'+cp_data1);
-              console.log('metervalue_In-charging A_cp_data2:'+cp_data2);
-              console.log('metervalue_In-charging V_cp_data3:'+cp_data3);
-              console.log('metervalue_In-charging power_cp_data4:'+cp_data4);
-              if(j_aa[3].connectorId==1){
-                 wsCpdatas[req.params.id][0].connector_1_meter.data1 = cp_data1
-                 wsCpdatas[req.params.id][0].connector_1_meter.data2 = cp_data2
-                 wsCpdatas[req.params.id][0].connector_1_meter.data3 = cp_data3
-                 wsCpdatas[req.params.id][0].connector_1_meter.data4 = cp_data4
-                 wsCpdatas[req.params.id][0].connector_1_meter.data5 = cp_data5
-                 console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
-              }
-              update_guns_meters(req.params.id,meter_connectorid,cp_data1,cp_data2,cp_data3,cp_data4)
+       var meter_connectorid=j_aa[3].connectorId
+        var meter_transactionid= j_aa[3].transactionId
+                    console.log('metervalue_connectorid:'+meter_connectorid);
+                    console.log('metervalue_transactionid:'+meter_transactionid);
+               if(j_aa[3].meterValue[0].sampledValue[0].unit=="Wh"){
+                  cp_data1 = j_aa[3].meterValue[0].sampledValue[0].value
+                  // alex said it to 100 to test
+                  // /1000 is for kwh
+                  cp_data1 = cp_data1/1000
+                  cp_data1 = cp_data1.toFixed(3)
+                  console.log('metervalue_No-charging_Wh:'+cp_data1);
+                  //console.log('metervalue_No-charging_kWh:'+cp_data1/1000);
+                    cp_data2 = "0.00";
+                    cp_data3 = "0.0";
+                    cp_data4 = "0.0";
 
-}
-else{
-  console.log("this is not ABB's meters");
+                    if(j_aa[3].connectorId==1){
+                       wsCpdatas[req.params.id][0].connector_1_meter.data1 = cp_data1
+                       console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                    }
+                    if(j_aa[3].connectorId==2){
+                       wsCpdatas[req.params.id][0].connector_2_meter.data1 = cp_data1
+                       console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                    }
+
+               } else {
+                 // alex said it to 100 to test
+                  cp_data1 =  j_aa[3].meterValue[0].sampledValue[4].value
+                  cp_data1 = cp_data1/1000
+                  cp_data2 =  j_aa[3].meterValue[0].sampledValue[0].value
+                  cp_data3 =  j_aa[3].meterValue[0].sampledValue[7].value
+                  cp_data1 = cp_data1.toFixed(3)
+                  cp_data4 = cp_data2*cp_data3;
+                  cp_data4 = cp_data4.toFixed(3)
+                  console.log('metervalue_In-charging khw_cp_data1:'+cp_data1);
+                   console.log('metervalue_In-charging A_cp_data2:'+cp_data2);
+                   console.log('metervalue_In-charging V_cp_data3:'+cp_data3);
+                   console.log('metervalue_In-charging power_cp_data4:'+cp_data4);
+                   if(j_aa[3].connectorId==1){
+                      wsCpdatas[req.params.id][0].connector_1_meter.data1 = cp_data1
+                      wsCpdatas[req.params.id][0].connector_1_meter.data2 = cp_data2
+                      wsCpdatas[req.params.id][0].connector_1_meter.data3 = cp_data3
+                      wsCpdatas[req.params.id][0].connector_1_meter.data4 = cp_data4
+                      wsCpdatas[req.params.id][0].connector_1_meter.data5 = cp_data5
+                      console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                   }
+                   if(j_aa[3].connectorId==2){
+                     wsCpdatas[req.params.id][0].connector_2_meter.data1 = cp_data1
+                     wsCpdatas[req.params.id][0].connector_2_meter.data2 = cp_data2
+                     wsCpdatas[req.params.id][0].connector_2_meter.data3 = cp_data3
+                     wsCpdatas[req.params.id][0].connector_2_meter.data4 = cp_data4
+                     wsCpdatas[req.params.id][0].connector_2_meter.data5 = cp_data5
+                     console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                    }
+
+               }
+
+               update_guns_meters(req.params.id,meter_connectorid,cp_data1,cp_data2,cp_data3,cp_data4)
+  }
+  if(id[0]=="G" && id[1]=="R" && id[2]=="E" && id[3]=="E" && id[4]=="N"){
+    console.log("Green---------------------this is GS's meters");
+    console.log("Green---------------------this is GS's meters");
+    console.log("Green---------------------this is GS's meters");
+    console.log("Green---------------------this is GS's meters");
+    console.log("Green---------------------this is GS's meters");
+
+    console.log('metervalue_[0]:'+j_aa[3].meterValue[0].sampledValue[0].value);
+    console.log('metervalue_[1]:'+j_aa[3].meterValue[0].sampledValue[1].value);
+    console.log('metervalue_[2]:'+j_aa[3].meterValue[0].sampledValue[2].value);
+    console.log('metervalue_[3]:'+j_aa[3].meterValue[0].sampledValue[3].value);
+    console.log('metervalue_[4]:'+j_aa[3].meterValue[0].sampledValue[4].value);
+
+         var meter_connectorid=j_aa[3].connectorId
+          var meter_transactionid= j_aa[3].transactionId
+                      console.log('metervalue_connectorid:'+meter_connectorid);
+                      console.log('metervalue_transactionid:'+meter_transactionid);
+                 if(j_aa[3].meterValue[0].sampledValue[0].unit=="Wh"){
+                    cp_data1 = j_aa[3].meterValue[0].sampledValue[0].value
+                    // alex said it to 100 to test
+                    // /1000 is for kwh
+                    cp_data1 = cp_data1/1000
+                    cp_data1 = cp_data1.toFixed(3)
+                    console.log('metervalue_No-charging_Wh:'+cp_data1);
+                    //console.log('metervalue_No-charging_kWh:'+cp_data1/1000);
+                      cp_data2 = "0.00";
+                      cp_data3 = "0.0";
+                      cp_data4 = "0.0";
+
+                      if(j_aa[3].connectorId==1){
+                         wsCpdatas[req.params.id][0].connector_1_meter.data1 = cp_data1
+                         console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                      }
+                      if(j_aa[3].connectorId==2){
+                         wsCpdatas[req.params.id][0].connector_2_meter.data1 = cp_data1
+                         console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                      }
+
+                 } else {
+                   // alex said it to 100 to test
+                    cp_data1 =  j_aa[3].meterValue[0].sampledValue[0].value
+                    cp_data1 = cp_data1/1000
+                    cp_data2 =  j_aa[3].meterValue[0].sampledValue[2].value
+                    cp_data3 =  j_aa[3].meterValue[0].sampledValue[3].value
+                    cp_data1 = cp_data1.toFixed(3)
+                    cp_data4 = cp_data2*cp_data3;
+                    cp_data4 = cp_data4.toFixed(3)
+                    console.log('metervalue_In-charging khw_cp_data1:'+cp_data1);
+                     console.log('metervalue_In-charging A_cp_data2:'+cp_data2);
+                     console.log('metervalue_In-charging V_cp_data3:'+cp_data3);
+                     console.log('metervalue_In-charging power_cp_data4:'+cp_data4);
+                     if(j_aa[3].connectorId==1){
+                        wsCpdatas[req.params.id][0].connector_1_meter.data1 = cp_data1
+                        wsCpdatas[req.params.id][0].connector_1_meter.data2 = cp_data2
+                        wsCpdatas[req.params.id][0].connector_1_meter.data3 = cp_data3
+                        wsCpdatas[req.params.id][0].connector_1_meter.data4 = cp_data4
+                        wsCpdatas[req.params.id][0].connector_1_meter.data5 = cp_data5
+                        console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                     }
+                     if(j_aa[3].connectorId==2){
+                       wsCpdatas[req.params.id][0].connector_2_meter.data1 = cp_data1
+                       wsCpdatas[req.params.id][0].connector_2_meter.data2 = cp_data2
+                       wsCpdatas[req.params.id][0].connector_2_meter.data3 = cp_data3
+                       wsCpdatas[req.params.id][0].connector_2_meter.data4 = cp_data4
+                       wsCpdatas[req.params.id][0].connector_2_meter.data5 = cp_data5
+                       console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+                      }
+
+                 }
+
+                 update_guns_meters(req.params.id,meter_connectorid,cp_data1,cp_data2,cp_data3,cp_data4)
+    }
+
+if(id[0]=="s" && id[1]=="p"){
+  console.log("this is spacepark's meters");
 
          var meter_connectorid=j_aa[3].connectorId
         var meter_transactionid= j_aa[3].transactionId
@@ -1189,6 +1284,35 @@ else{
 
                update_guns_meters(req.params.id,meter_connectorid,cp_data1,cp_data2,cp_data3,cp_data4)
   }
+if(id[0]=="T" && id[1]=="A" && id[2]=="C"){
+  console.log("this is ABB's meters");
+  var meter_connectorid=j_aa[3].connectorId
+ var meter_transactionid= j_aa[3].transactionId
+             console.log('metervalue_connectorid:'+meter_connectorid);
+             console.log('metervalue_transactionid:'+meter_transactionid);
+             cp_data1 =  j_aa[3].meterValue[0].sampledValue[3].value
+             cp_data1 = cp_data1/1000
+             cp_data2 =  j_aa[3].meterValue[0].sampledValue[1].value
+             cp_data3 =  j_aa[3].meterValue[0].sampledValue[0].value
+             cp_data1 = cp_data1.toFixed(3)
+             cp_data4 = cp_data2*cp_data3;
+             cp_data4 = cp_data4.toFixed(3)
+             console.log('metervalue_In-charging khw_cp_data1:'+cp_data1);
+              console.log('metervalue_In-charging A_cp_data2:'+cp_data2);
+              console.log('metervalue_In-charging V_cp_data3:'+cp_data3);
+              console.log('metervalue_In-charging power_cp_data4:'+cp_data4);
+              if(j_aa[3].connectorId==1){
+                 wsCpdatas[req.params.id][0].connector_1_meter.data1 = cp_data1
+                 wsCpdatas[req.params.id][0].connector_1_meter.data2 = cp_data2
+                 wsCpdatas[req.params.id][0].connector_1_meter.data3 = cp_data3
+                 wsCpdatas[req.params.id][0].connector_1_meter.data4 = cp_data4
+                 wsCpdatas[req.params.id][0].connector_1_meter.data5 = cp_data5
+                 console.log("wsCpdatas_all="+JSON.stringify(wsCpdatas[req.params.id][0]));
+              }
+              update_guns_meters(req.params.id,meter_connectorid,cp_data1,cp_data2,cp_data3,cp_data4)
+
+}
+
 
                  var tt_obj=[3,6677543,{"status":"Accepted"}]
                   tt_obj[1]=j_aa[1]
