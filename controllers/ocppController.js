@@ -183,35 +183,34 @@ async function update_guns_meters(gun_cpsn,gun_connector,gun_data1,gun_data2,gun
    var now_time=new Date(+new Date() + 8 * 3600 * 1000).toISOString()
 
 if(gun_cpid !== null){
-  if(gun_cpid !== null){
-    await gun_cpid.update({
-      guns_metervalue1:gun_data1,
-        guns_metervalue2:gun_data2,
-          guns_metervalue3:gun_data3,
-          guns_metervalue4:gun_data4,
-          guns_metervalue5:"0.00",
-          guns_metervalue6:"0.00",
-          guns_memo2:now_time
-    })
 
   if(gun_data1 != gun_cpid.guns_metervalue1){
     console.log("before metervalues1 ="+gun_cpid.guns_metervalue1+"new is="+gun_data1);
 
 if(gun_cpid.guns_metervalue5==null || gun_cpid.guns_metervalue6==null){
   console.log("!!!!! data5 or data6 == null!!!!!");
-  gun_cpid.guns_metervalue5 = "";
-  gun_cpid.guns_metervalue6 = "";
-  await gun_cpid.update({
-    guns_metervalue1:gun_data1,
-      guns_metervalue2:gun_data2,
-        guns_metervalue3:gun_data3,
-        guns_metervalue4:gun_data4,
-        guns_metervalue5:"0.00",
-        guns_metervalue6:"0.00",
-        guns_memo2:now_time
-  })
-
-
+  if(gun_cpid.guns_metervalue5==null){
+    gun_cpid.guns_metervalue5 = "";
+    await gun_cpid.update({
+      guns_metervalue1:gun_data1,
+        guns_metervalue2:gun_data2,
+          guns_metervalue3:gun_data3,
+          guns_metervalue4:gun_data4,
+          guns_metervalue5:"0.00",
+          guns_memo2:now_time
+    })
+  }
+  if(gun_cpid.guns_metervalue6==null){
+    gun_cpid.guns_metervalue6 = "";
+    await gun_cpid.update({
+      guns_metervalue1:gun_data1,
+        guns_metervalue2:gun_data2,
+          guns_metervalue3:gun_data3,
+          guns_metervalue4:gun_data4,
+          guns_metervalue6:"0.00",
+          guns_memo2:now_time
+    })
+  }
 }
 else{
     await gun_cpid.update({
@@ -234,15 +233,34 @@ else{
       console.log("same data !!!!! - so no update them  => before metervalues1 ="+gun_cpid.guns_metervalue1+"new is="+gun_data1);
       if(gun_cpid.guns_metervalue5==null || gun_cpid.guns_metervalue6==null){
         console.log("!!!!! data5 or data6 == null!!!!!");
-        gun_cpid.guns_metervalue5 = "";
-        gun_cpid.guns_metervalue6 = "";
+        if(gun_cpid.guns_metervalue5==null){
+          gun_cpid.guns_metervalue5 = "";
+          await gun_cpid.update({
+            guns_metervalue1:gun_data1,
+              guns_metervalue2:gun_data2,
+                guns_metervalue3:gun_data3,
+                guns_metervalue4:gun_data4,
+                guns_metervalue5:"0.00",
+                guns_memo2:now_time
+          })
+        }
+        if(gun_cpid.guns_metervalue6==null){
+          gun_cpid.guns_metervalue6 = "";
+          await gun_cpid.update({
+            guns_metervalue1:gun_data1,
+              guns_metervalue2:gun_data2,
+                guns_metervalue3:gun_data3,
+                guns_metervalue4:gun_data4,
+                guns_metervalue6:"0.00",
+                guns_memo2:now_time
+          })
+        }
+      }else{
         await gun_cpid.update({
           guns_metervalue1:gun_data1,
             guns_metervalue2:gun_data2,
               guns_metervalue3:gun_data3,
               guns_metervalue4:gun_data4,
-              guns_metervalue5:"0.00",
-              guns_metervalue6:"0.00",
               guns_memo2:now_time
         })
       }
@@ -259,7 +277,7 @@ else{
 
    return 0;
 }
-}
+
 
 async function send_cp_to_kw_api(kw_cpid,kw_gun_status,data1,data2,data3,data4,data5,data6) {
   //外站接口
