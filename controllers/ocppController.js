@@ -1172,7 +1172,7 @@ if(id[0]=="G" && id[1]=="S"){
                     // alex said it to 100 to test
                     // /1000 is for kwh
                 //    cp_data1 = cp_data1/1000
-                    cp_data1 = cp_data1.toFixed(3)
+                  //  cp_data1 = cp_data1.toFixed(3)
                     console.log('metervalue_No-charging_Wh:'+cp_data1);
                     //console.log('metervalue_No-charging_kWh:'+cp_data1/1000);
                       cp_data2 = "0.00";
@@ -1194,7 +1194,7 @@ if(id[0]=="G" && id[1]=="S"){
               //      cp_data1 = cp_data1/1000
                     cp_data2 =  j_aa[3].meterValue[0].sampledValue[2].value
                     cp_data3 =  j_aa[3].meterValue[0].sampledValue[3].value
-                    cp_data1 = cp_data1.toFixed(3)
+                //    cp_data1 = cp_data1.toFixed(3)
                     cp_data4 = cp_data2*cp_data3;
                     cp_data4 = cp_data4.toFixed(3)
                     console.log('metervalue_In-charging khw_cp_data1:'+cp_data1);
