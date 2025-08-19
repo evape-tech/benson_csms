@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* 變數 */
@@ -17,7 +18,7 @@ body {
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
     color: var(--dark);
-    background: var(--bg);
+    /* background: var(--bg); */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -184,4 +185,15 @@ img {
 .page-item.active .page-link {
     background-color: var(--primary);
     border-color: var(--primary);
+}
+
+.btn-primary {
+  background-color: #b5cc39 !important;
+  border-color: #b5cc39 !important;
+  color: white !important;
+}
+
+textarea:focus, .form-control:focus {
+    border-color: #b5cc39 !important;
+    box-shadow: 0 0 0 0.2rem rgba(181, 204, 57, 0.15);
 }

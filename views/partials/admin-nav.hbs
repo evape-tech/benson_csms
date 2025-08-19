@@ -1,0 +1,33 @@
+</ul>
+<style>
+    .drawer-link:hover,
+    .drawer-link:hover .drawer-text,
+    .drawer-link:hover .material-icons {
+        color: rgba(183, 202, 57, 0.5) !important;
+    }
+</style>
+{{!-- Admin Navigation Drawer --}}
+
+{{!-- Material Navigation Drawer Style --}}
+<div class="material-drawer bg-white shadow-sm h-100 border-end d-flex flex-column" style="width: 100%; height: 100%;">
+    <ul class="nav flex-column p-2 flex-grow-1" style="overflow-y:auto; height:100vh;">
+        <li class="nav-item">
+            <a href="/admin/cp_list" class="nav-link d-flex align-items-center py-3 px-3 rounded drawer-link" style="color: #111;">
+                <span class="material-icons me-3" style="font-size: 24px; color: #111;">ev_station</span>
+                <span class="drawer-text" style="color: #111;">充電樁列表</span>
+            </a>
+        </li>
+        {{!-- <li class="nav-item">
+            <a href="/admin/add_cp" class="nav-link d-flex align-items-center py-3 px-3 rounded drawer-link" style="color: #111;">
+                <span class="material-icons me-3" style="font-size: 24px; color: #111;">add_circle</span>
+                <span class="drawer-text" style="color: #111;">新增充電樁</span>
+            </a>
+        </li> --}}
+        <li class="nav-item">
+            <a href="/admin/ocpp_log_list" class="nav-link d-flex align-items-center py-3 px-3 rounded drawer-link" style="color: #111;">
+                <span class="material-icons me-3" style="font-size: 24px; color: #111;">list_alt</span>
+                <span class="drawer-text" style="color: #111;">OCPP logs</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,41 +1,31 @@
-<div class="row mt-3">
-    <div class="col-md-2">
-        <h3 class="ml-2">CP後台管理</h3>
-        <ul class="list-group">
-          <li class="list-group-item m-0"><a href="/admin/cp_list">充電樁列表</a></li>
-          <li class="list-group-item m-0"><a href="/admin/add_cp">新增充電樁</a></li>
-          <li class="list-group-item m-0"><a href="/admin/ocpp_log_list">OCPP logs</a></li>
-          </ul>
-    </div>
-    <div class="col-md-10">
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f5f6fa;">
+    <div class="card shadow-lg p-4" style="max-width: 480px; width: 100%; border-radius: 16px; background: #fff;">
+        <div class="d-flex align-items-center mb-4">
+            <span class="material-icons me-2" style="font-size:2rem; color:#111;">add_circle</span>
+            <h4 class="mb-0 fw-bold" style="color:#111;">新增充電樁</h4>
+        </div>
         {{> message}}
-
         <form action="/admin/add_cp" method="POST">
-            <h5><span style="background-color: aqua;">新增充電樁</span></h5>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="cpid">cpid</span>
-            <input type="text" class="form-control"  name="cpid" value="{{Gun.cpid}}" required>
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="connector">connector</span>
-            <input type="text" class="form-control" name="connector" value="{{Gun.connector}}" required>
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="cpsn">cpsn</span>
-            <input type="text" class="form-control" name="cpsn" value="{{Gun.cpsn}}" required>
-        </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="guns_memo1">描述</span>
-            <textarea class="form-control" name="guns_memo1" id="description">{{Gun.guns_memo1}}</textarea>
-        </div>
-
-            <button type="submit" class="btn btn-outline-info mb-3">確定新增</button>
-
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="cpid" name="cpid" value="{{Gun.cpid}}" placeholder="充電樁編號" required>
+                        <label for="cpid">充電樁編號(CPID)</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="connector" name="connector" value="{{Gun.connector}}" placeholder="Connector" required>
+                        <label for="connector">Connector(gun)</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="cpsn" name="cpsn" value="{{Gun.cpsn}}" placeholder="樁序號" required>
+                        <label for="cpsn">樁序號(CPSN)</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="guns_memo1" id="description" placeholder="描述" style="height: 100px;">{{Gun.guns_memo1}}</textarea>
+                        <label for="description">描述(desc)</label>
+                    </div>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn btn-light w-50 d-flex align-items-center justify-content-center" style="border-radius:8px; border:1px solid #e0e0e0; color:#b5cc39; font-weight:500; text-transform:uppercase; box-shadow:0 2px 2px rgba(0,0,0,0.05); font-size:1.1rem;" onclick="window.history.back()">取消</button>
+                <button type="submit" class="btn btn-primary w-50" style="border-radius:8px; font-weight:500; font-size:1.1rem;">確定新增</button>
+            </div>
         </form>
-
-
-
     </div>
 </div>

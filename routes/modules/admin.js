@@ -25,6 +25,8 @@ router.post('/add_cp', auth.authenticatedAdmin, adminController.post_add_cp)
 router.delete('/post_del_cp/:id', auth.authenticatedAdmin, adminController.post_del_cp)
 router.post('/post_edit_cp/:id', auth.authenticatedAdmin, upload, adminController.post_edit_cp)
 router.get('/show_current_cp/:id', auth.authenticatedAdmin, upload, adminController.show_current_cp)
+router.post('/set_site_power', auth.authenticatedAdmin, adminController.set_site_power);
+router.post('/set_load_balance', auth.authenticatedAdmin, adminController.set_load_balance);
 
 
 

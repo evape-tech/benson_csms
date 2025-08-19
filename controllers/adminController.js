@@ -9,6 +9,7 @@ const Order = db.Order
 const Cp_log = db.Cp_log
 const Cp_gun_data = db.Cp_gun_data
 const Gun = db.Gun
+const SiteSettings = db.SiteSettings;
 
 const adminController = {
   /*
@@ -60,7 +61,7 @@ const adminController = {
       const id = req.params.id
       const guns = await Gun.findByPk(id)
       await guns.destroy()
-      return res.redirect('back')
+  return res.redirect('/admin/cp_list')
     } catch (e) {
       console.log(e)
     }
@@ -94,8 +95,11 @@ const adminController = {
   cp_list: async (req, res) => {
     try {
       const cp_list = await Gun.findAll({ raw: true, nest: true })
+      const site_settings = await SiteSettings.findOne({ where: { id: 1 }, raw: true });
+      console.log('[cp_list] cp_list:', cp_list);
+      console.log('[cp_list] site_settings:', site_settings);
     //  return res.render('admin/products', { products })
-      return res.render('admin/cp_list', { cp_list })
+      return res.render('admin/cp_list', { cp_list, site_settings })
     } catch (e) {
       console.log(e)
     }
@@ -107,7 +111,7 @@ const adminController = {
   */
   ocpp_log_list: async (req, res) => {
     try {
-      const ocpp_log_list = await Cp_log.findAll({order:[["id","DESC"]],limit:20, raw: true, nest: true })
+      const ocpp_log_list = await Cp_log.findAll({order:[["id","DESC"]],limit:100, raw: true, nest: true })
     //  return res.render('admin/products', { products })
       return res.render('admin/ocpp_log_list', { ocpp_log_list })
     } catch (e) {
@@ -134,60 +138,64 @@ const adminController = {
      方法: GET
   */
   start_charging: async (req, res) => {
-    console.log("start_charging_cpid:"+JSON.stringify(req.params.id))
-    const id = req.params.id
-      const api = 'http://rcu.dq1.tw:8089/ocpp/spacepark_cp_api';
-    axios.post(api,{
-      apikey:'cp_api_key16888',
+    const id = req.params.id;
+    const api = 'http://localhost:8089/ocpp/spacepark_cp_api';
+    console.log(`[start_charging] API: ${api}`);
+    console.log(`[start_charging] Params:`, { cp_id: id, cmd: 'cmd_start_charging' });
+    axios.post(api, {
+      apikey: 'cp_api_key16888',
       cp_id: id,
-      cmd:'cmd_start_charging',
-
-  })
-  .then(function (response) {
-    //这里获得整个请求响应对象
-    //console.log(response);
-    var aaa=response.data;
-    var bbb=JSON.stringify(aaa);
-    console.log('benson_csms_api_back:'+ bbb);
-  return res.redirect('back')
-  })
-  .catch(function (error) {
-  //  console.log(error);
-      console.log("benson_csms_error");
-  })
-  .then(function () {
-  });
-
+      cmd: 'cmd_start_charging',
+    })
+      .then(function (response) {
+        console.log('[start_charging] API response:', response.status, response.statusText);
+        console.log('[start_charging] API data:', JSON.stringify(response.data));
+        return res.redirect('back');
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log('[start_charging] API error response:', error.response.status, error.response.statusText);
+          console.log('[start_charging] API error data:', JSON.stringify(error.response.data));
+        } else if (error.request) {
+          console.log('[start_charging] API no response, request:', error.request);
+        } else {
+          console.log('[start_charging] API error:', error.message);
+        }
+        console.log('[start_charging] Full error:', error);
+        return res.redirect('back');
+      });
   },
   /*
      功能: admin stop_charging
      方法: GET
   */
   stop_charging: async (req, res) => {
-    console.log("stop_charging_cpid:"+JSON.stringify(req.params.id))
-    const id = req.params.id
-      const api = 'http://rcu.dq1.tw:8089/ocpp/spacepark_cp_api';
-    axios.post(api,{
-      apikey:'cp_api_key16888',
+    const id = req.params.id;
+    const api = 'http://localhost:8089/ocpp/spacepark_cp_api';
+    console.log(`[stop_charging] API: ${api}`);
+    console.log(`[stop_charging] Params:`, { cp_id: id, cmd: 'cmd_stop_charging' });
+    axios.post(api, {
+      apikey: 'cp_api_key16888',
       cp_id: id,
-      cmd:'cmd_stop_charging',
-
-  })
-  .then(function (response) {
-    //这里获得整个请求响应对象
-    //console.log(response);
-    var aaa=response.data;
-    var bbb=JSON.stringify(aaa);
-    console.log('benson_csms_api_back:'+ bbb);
-return res.redirect('back')
-  })
-  .catch(function (error) {
-  //  console.log(error);
-      console.log("benson_csms_error");
-  })
-  .then(function () {
-  });
-
+      cmd: 'cmd_stop_charging',
+    })
+      .then(function (response) {
+        console.log('[stop_charging] API response:', response.status, response.statusText);
+        console.log('[stop_charging] API data:', JSON.stringify(response.data));
+        return res.redirect('back');
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log('[stop_charging] API error response:', error.response.status, error.response.statusText);
+          console.log('[stop_charging] API error data:', JSON.stringify(error.response.data));
+        } else if (error.request) {
+          console.log('[stop_charging] API no response, request:', error.request);
+        } else {
+          console.log('[stop_charging] API error:', error.message);
+        }
+        console.log('[stop_charging] Full error:', error);
+        return res.redirect('back');
+      });
   },
   /*
       功能: 管理者登入頁面
@@ -476,7 +484,173 @@ return res.redirect('back')
     } catch (e) {
       console.log(e)
     }
+  },
+  /*
+     功能: 更新充電配置
+     方法: POST
+     參數: cp_id, profile
+  */
+  update_charging_profiler: async (req, res) => {
+    const api = 'http://localhost:8089/ocpp/spacepark_cp_api';
+
+    try {
+        // 調用 cp_list 獲取充電樁列表
+        const cpList = await Gun.findAll({ raw: true, nest: true });
+
+        if (!cpList || cpList.length === 0) {
+            console.log('[update_charging_profiler] No charging stations found');
+            return { success: false, message: 'No charging stations found' };
+        }
+
+        console.log(`[update_charging_profiler] Found ${cpList.length} charging stations`);
+
+        // 獲取 EMS 模式
+        const siteSetting = await SiteSettings.findOne({ where: { id: 1 }, raw: true });
+        if (!siteSetting) {
+            console.log('[update_charging_profiler] No site settings found');
+            return { success: false, message: 'No site settings found' };
+        }
+
+        const { ems_mode, max_power_kw } = siteSetting;
+        console.log(`[update_charging_profiler] EMS Mode: ${ems_mode}, Max Power: ${max_power_kw} kW`);
+
+        // 根據 EMS 模式計算每個充電樁的功率分配
+        const powerAllocation = calculatePowerAllocation(ems_mode, max_power_kw, cpList);
+        console.log('[update_charging_profiler] Power Allocation:', powerAllocation);
+
+        // 遍歷充電樁列表，對每個充電樁發送 OCPP 訊息
+        for (const station of cpList) {
+            const { cpid } = station;
+            const allocatedPower = powerAllocation[cpid] || 0;
+
+            console.log(`[update_charging_profiler] Sending OCPP message to CPID: ${cpid}`);
+
+            try {
+                const response = await axios.post(api, {
+                    apikey: 'cp_api_key16888',
+                    cp_id: cpid,
+                    cmd: 'set_charging_profile'
+                });
+
+                console.log(`[update_charging_profiler] Response for CPID ${cpid}:`, response.data);
+            } catch (error) {
+                console.error(`[update_charging_profiler] Error for CPID ${cpid}:`, error.message);
+            }
+        }
+
+        return { success: true, message: 'OCPP messages sent to all charging stations' };
+    } catch (error) {
+        console.error('[update_charging_profiler] Error:', error.message);
+        return { success: false, message: 'Failed to update charging profile' };
+    }
+
+    // 計算功率分配的輔助函數
+    function calculatePowerAllocation(ems_mode, max_power_kw, cpList) {
+        const allocation = {};
+
+        switch (ems_mode) {
+            case 'static':
+            case 'priority':
+            default:
+                const powerPerStation = max_power_kw / cpList.length;
+                cpList.forEach(station => {
+                    allocation[station.cpid] = powerPerStation;
+                });
+            break;
+
+            case 'dynamic':
+                // 動態分配功率，根據當前正在充電的槍數
+                const chargingStations = cpList.filter(station => station.status === 'charging');
+                if (chargingStations.length === 0) {
+                    console.log('[calculatePowerAllocation] No charging stations currently active. Falling back to static allocation.');
+                    // 回退到靜態分配
+                    const fallbackPowerPerStation = max_power_kw / cpList.length;
+                    cpList.forEach(station => {
+                        allocation[station.cpid] = fallbackPowerPerStation;
+                    });
+                    break;
+                }
+
+                const powerPerChargingStation = max_power_kw / chargingStations.length;
+                chargingStations.forEach(station => {
+                    allocation[station.cpid] = powerPerChargingStation;
+                });
+            break;
+            // 現有架構無法實現，需要紀錄充電順序才有辦法
+            // case 'priority':
+            //     // 根據某些優先級分配功率（假設有優先級字段）
+            //     cpList.forEach(station => {
+            //         const priorityPower = station.priority || 0;
+            //         allocation[station.cpid] = Math.min(priorityPower, max_power_kw);
+            //     });
+            // break;
+        }
+
+        return allocation;
+    }
+  },
+
+  // 場域總功耗設定
+  set_load_balance: async (req, res) => {
+    try {
+    console.log('[setLoadBalance] Received request with body:', req.body);
+    const ems_mode = req.body.load_balance_mode;
+    console.log(`[setLoadBalance] ems_mode = ${ems_mode}`);
+    // 找到第一筆資料
+    const siteSetting = await SiteSettings.findOne({ where: { id: 1 } });
+
+    if (siteSetting) {
+      // 更新 ems_mode
+      siteSetting.ems_mode = ems_mode;
+      await siteSetting.save(); // 保存更新
+      console.log('[setLoadBalance] Update successful. New ems_mode:', siteSetting.ems_mode);
+      // 呼叫 update_charging_profiler
+    //   const result = await adminController.update_charging_profiler(req, res);
+    //   if (!result.success) {
+    //       console.error('[setLoadBalance] update_charging_profiler failed:', result.message);
+    //       return res.status(500).json({ success: false, message: 'Failed to update charging profile' });
+    //   }
+      res.redirect('back');
+    } else {
+      console.log('[setLoadBalance] No record found with id = 1');
+      res.redirect('back');
+    }
+  } catch (e) {
+    console.log('[setLoadBalance] Error occurred:', e);
+    res.redirect('back');
   }
+},
+  // 負載平衡設定
+set_site_power: async (req, res) => {
+    try {
+      console.log('[setSitePower] Received request with body:', req.body);
+      const { max_power_kw } = req.body;
+      console.log(`[setSitePower] max_power_kw = ${max_power_kw}`);
+
+      // 找到第一筆資料
+      const siteSetting = await SiteSettings.findOne({ where: { id: 1 } });
+
+      if (siteSetting) {
+        // 更新 max_power_kw
+        siteSetting.max_power_kw = max_power_kw;
+        await siteSetting.save(); // 保存更新
+        console.log('[setSitePower] Update successful. New max_power_kw:', siteSetting.max_power_kw);
+        // 呼叫 update_charging_profiler
+        // const result = await adminController.update_charging_profiler(req, res);
+        // if (!result.success) {
+        //     console.error('[setSitePower] update_charging_profiler failed:', result.message);
+        //     return res.status(500).json({ success: false, message: 'Failed to update charging profile' });
+        // }
+        res.redirect('back');
+      } else {
+        console.log('[setSitePower] No record found with id = 1');
+        res.redirect('back');
+      }
+    } catch (e) {
+      console.log('[setSitePower] Error occurred:', e);
+      res.redirect('back');
+    }
+  },
 }
 
 module.exports = adminController
