@@ -273,7 +273,7 @@ async function send_cp_to_kw_api(kw_cpid,kw_gun_status,data1,data2,data3,data4,d
 
 }
 
-async function ocpp_send_command(cpid,cmd) {
+async function ocpp_send_command(cpid,cmd, siteSetting) {
     //外站接口
     //gun_cpid={"id":4,"connector":"0","cpsn":"spacepark102","guns_data1":"Available","createdAt":null,"updatedAt":"2024-01-09"}
     console.log("into function ocpp_send_command");
@@ -366,6 +366,46 @@ async function ocpp_send_command(cpid,cmd) {
         console.log('result:'+JSON.stringify(result))
     }
 
+    if(cmd=="ocpp_set_charging_profile"){
+        const result = { succeed: true };
+        // 組出 OCPP 設定指令
+        console.log("[ocpp_set_charging_profile] ocpp_send_command siteSetting:", JSON.stringify(siteSetting));
+        const ocpp_id_send = "667751518";
+        const unit = "A";
+        const limit = 10; // A
+        const tt_obj = [
+            2,
+            ocpp_id_send,
+            "SetChargingProfile",
+            {
+                connectorId: 0, // 0 代表全站最大功率，或指定 connectorId
+                csChargingProfiles: {
+                    chargingProfileId: 1,
+                    stackLevel: 1,
+                    chargingProfilePurpose: "ChargePointMaxProfile",
+                    chargingProfileKind: "Absolute",
+                    chargingSchedule: {
+                        chargingRateUnit: unit,
+                        chargingSchedulePeriod: [
+                            {
+                                startPeriod: 0,
+                                limit: limit
+                            }
+                        ]
+                    }
+                }
+            }
+        ];
+        // 下發給對應的 ws
+        if(wsClients[cpsn] !== undefined) {
+            wsClients[cpsn].forEach((client) => {
+                client.send(JSON.stringify(tt_obj));
+            });
+            console.log(`[ocpp_set_charging_profile] 已下發給 ${cpsn}:`, JSON.stringify(tt_obj));
+        } else {
+            console.log(`[ocpp_set_charging_profile] ${cpsn} 不在線`);
+        }
+    }
 
 }
 
@@ -464,8 +504,15 @@ const ocppController = {
 
                     if(cp_api=='cp_api_key16888'){
                         switch (cp_cmd) {
-                            case 'set_charging_profile':
-
+                            case 'cmd_set_charging_profile':
+                                const { siteSetting } = req.body.payload || {};
+                                if (!siteSetting) {
+                                    res.status(400).json({ status: 'err', msg: 'siteSetting missing' });
+                                    break;
+                                }
+                                console.log(`[cmd_set_charging_profile] 收到 siteSetting: ${JSON.stringify(siteSetting)}`);
+                                ocpp_send_command(cpid,"ocpp_set_charging_profile", siteSetting);
+                                res.status(200).json({ success: true, msg: `Profile sent to ${cpid}`});
                                 break;
                             case 'cmd_start_charging':
                                 res.status(200)
@@ -1587,7 +1634,7 @@ const ocppController = {
             "orderId":linepayorder_id,
             "currency":"TWD"
         }
-       
+
 
         //send_body_data.orderId="benson"+linepayorder_id;
 
